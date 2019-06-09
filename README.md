@@ -1,5 +1,5 @@
 # TA-opnsense
-Splunk Add on for OPNsense firewall.
+Splunk Add on for [OPNsense firewall](https://opnsense.org/).
 
 ## Supported Sourcetypes
 
