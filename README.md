@@ -7,7 +7,7 @@ Splunk Add on for [OPNsense firewall](https://opnsense.org/).
 opnsense:filterlog
 opnsense:dhcpd
 opnsense:suricata
-
+opnsense:squid
 ```
 
 ### Where to Install
