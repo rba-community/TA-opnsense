@@ -1,6 +1,10 @@
 # TA-opnsense
 Splunk Add on for [OPNsense firewall](https://opnsense.org/).
 
+```
+Version 1.1.0
+```
+
 ## Supported Sourcetypes
 
 ```
