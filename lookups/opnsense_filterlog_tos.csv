@@ -1,0 +1,22 @@
+tos,dscp_class,ip_precedence
+0×20,cs1,1:Priority
+0×28,af11,1:Priority
+0×30,af12,1:Priority
+0×38,af13,1:Priority
+0×40,cs2,2:Immediate
+0×48,af21,2:Immediate
+0×50,af22,2:Immediate
+0×58,af23,2:Immediate
+0×60,cs3,3:Flash
+0×68,af31,3:Flash
+0×70,af32,3:Flash
+0×78,af33,3:Flash
+0×80,cs4,4:FlashOverride
+0×88,af41,4:FlashOverride
+0×90,af42,4:FlashOverride
+0×98,af43,4:FlashOverride
+0xA0,cs5,5:Critical
+0xB8,ef,5:Critical
+0xC0,cs6,6:Internetworkcontrol
+0xE0,cs7,7:Networkcontrol
+0x0,cs0,0:Best Effort
