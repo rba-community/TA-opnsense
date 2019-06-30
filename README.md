@@ -2,8 +2,13 @@
 Splunk Add on for [OPNsense firewall](https://opnsense.org/).
 
 ```
-Version 1.1.0
+Version 1.2.0
+
+* Release Notes
+- removed static timestamp configurations to work with all syslog timestamp formats.
 ```
+
+
 
 ## Supported Sourcetypes
 
