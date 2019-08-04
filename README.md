@@ -17,6 +17,8 @@ opnsense:filterlog
 opnsense:dhcpd
 opnsense:suricata
 opnsense:squid
+opnsense:cron
+opnsense:unbound
 ```
 
 ### Where to Install
