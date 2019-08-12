@@ -17,7 +17,6 @@ Version 1.2.1
 ```
 
 ## Supported Sourcetypes
-
 ```
 opnsense:filterlog
 opnsense:dhcpd
