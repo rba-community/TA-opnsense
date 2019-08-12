@@ -2,13 +2,19 @@
 Splunk Add on for [OPNsense firewall](https://opnsense.org/).
 
 ```
-Version 1.2.0
+Version 1.2.1
 
 * Release Notes
-- removed static timestamp configurations to work with all syslog timestamp formats.
+- Support added for Unbound DNS logs
+- Support added for Cron logs
+- Severities have changed for suricata severities (found in lookups/opnsense_suricata_severities).
+  - Previously:
+   1 (High), 2 (Medium), 3 (Low), 4 (UNDEFINED)
+  - Now:
+    1 (Critical), 2 (High), 3 (Medium), 4 (Low)
+  * It is recommended you update these to match your organization's severities.
+- Fixed issue opnsense 19.7 log format change for ICMPv6 and TCP/UDP logs.
 ```
-
-
 
 ## Supported Sourcetypes
 
@@ -46,3 +52,12 @@ sourcetype = opnsense
 
 ## Bugs
 Please open an issue at [github.com](https://github.com/ZachChristensen28/TA-opnsense)
+
+## Versions
+
+```
+Version 1.2.0
+
+* Release Notes
+- removed static timestamp configurations to work with all syslog timestamp formats.
+```
