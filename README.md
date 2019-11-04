@@ -2,6 +2,9 @@
 Splunk Add on for [OPNsense firewall](https://opnsense.org/).
 
 ```
+Version 1.2.3
+- Mapped opnsense:dhcpd to CIM.
+
 Version 1.2.2
 - Support added for lighttpd (Opnsense Web GUI logs).
 - Support added for opnsense access logs.
