@@ -2,6 +2,9 @@
 Splunk Add on for [OPNsense firewall](https://opnsense.org/).
 
 ```
+Version 1.2.4
+- Added openvpn Sourcetype
+
 Version 1.2.3
 - Mapped opnsense:dhcpd to CIM.
 
@@ -21,18 +24,22 @@ Version 1.2.1
     1 (Critical), 2 (High), 3 (Medium), 4 (Low)
   * It is recommended you update these to match your organization's severities.
 - Fixed issue opnsense 19.7 log format change for ICMPv6 and TCP/UDP logs.
+
+Thanks to Contributors!
+- dgersting (github)
 ```
 
 ## Supported Sourcetypes
 ```
-opnsense:filterlog
+opnsense:access
+opnsense:cron
 opnsense:dhcpd
+opnsense:filterlog
+opnsense:lighttpd
+opnsense:openvpn
 opnsense:suricata
 opnsense:squid
-opnsense:cron
 opnsense:unbound
-opnsense:lighttpd
-opnsense:access
 ```
 
 ### Where to Install
