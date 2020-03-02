@@ -23,17 +23,11 @@ Version 1.2.1
 - Fixed issue opnsense 19.7 log format change for ICMPv6 and TCP/UDP logs.
 ```
 
-## Supported Sourcetypes
-```
-opnsense:filterlog
-opnsense:dhcpd
-opnsense:suricata
-opnsense:squid
-opnsense:cron
-opnsense:unbound
-opnsense:lighttpd
-opnsense:access
-```
+## Universal Forwarder
+
+Use the FreeBSD universal forwarder on OpnSense at [splunk.com](https://www.splunk.com/en_us/download/universal-forwarder.html#tabs/freebsd)
+
+*Note you will need to enable ssh on the firewall under `system > settings > administration` to install and configure the UF via ssh, or log into the console directly.*
 
 ### Where to Install
 Splunk platform Instance type | Supported | Required | Actions required/ Comments
@@ -45,17 +39,27 @@ Heavy Forwarders | Yes | Conditional | Not required.
 \* **This add-on must be installed on either the HF or Indexers.**
 
 ## Input Requirements
-Set the sourcetype to "opnsense" in the inputs.conf file on the forwarder.
+Set the sourcetype to "opnsense" in the inputs.conf file on the forwarder, the actual data type will be automatically identified on ingestion.
 
 i.e.
 
 ```
 # Sample inputs.conf
 
-[monitor:///var/log/firewall.log]
+[monitor:///var/log/filter.log]
 disabled = 0
-host = opnsense_firewall
 sourcetype = opnsense
+```
+### Supported Sourcetypes
+```
+opnsense:filterlog
+opnsense:dhcpd
+opnsense:suricata
+opnsense:squid
+opnsense:cron
+opnsense:unbound
+opnsense:lighttpd
+opnsense:access
 ```
 
 ## Bugs
