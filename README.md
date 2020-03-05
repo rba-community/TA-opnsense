@@ -2,7 +2,7 @@
 
  Info | Description
 ------|----------
-Version | 1.2.5
+Version | 1.2.5 - See on [Splunkbase](https://splunkbase.splunk.com/app/4538/)
 Vendor Product Version | [OPNsense 20.1](https://opnsense.org/)
 Add-on has a web UI | No. This add-on does not contain any views.
 
@@ -36,7 +36,7 @@ Set the sourcetype to "opnsense" in the inputs.conf file on the forwarder.
 
 Log into the OPNsense firewall and ensure the following:
 
-The below steps are necessary for field extractions to work properly. 
+The below steps are necessary for field extractions to work properly.
 
 1. Navigate to Services > Intrusion Detection > Administration
 1. On the "Settings" tab, click the radio button for `advanced mode`
