@@ -2,16 +2,15 @@
 
  Info | Description
 ------|----------
-Version | 1.2.5 - See on [Splunkbase](https://splunkbase.splunk.com/app/4538/)
+Version | 1.2.6 - See on [Splunkbase](https://splunkbase.splunk.com/app/4538/)
 Vendor Product Version | [OPNsense 20.1](https://opnsense.org/)
 Add-on has a web UI | No. This add-on does not contain any views.
 
 The TA-opnsense Add-on allows Splunk data administrators to map the OPNsense firewall events to the [CIM](https://docs.splunk.com/Splexicon:CommonInformationModel) enabling the data to be used with other Splunk Apps, such as Enterprise Security.
 
 ```
-Version 1.2.5
-- Updated README to include basic syslog configuration and install steps
-- Fixed Suricata "signature" field extraction and added input requirements.
+Version 1.2.6
+- Added field extraction for dropped events to suricata when IPS mode is enabled.
 ```
 
 Contributors
@@ -190,6 +189,10 @@ Please open an issue at [github.com](https://github.com/ZachChristensen28/TA-opn
 ## Versions
 
 ```
+Version 1.2.5
+- Updated README to include basic syslog configuration and install steps
+- Fixed Suricata "signature" field extraction and added input requirements.
+
 Version 1.2.4
 - Added openvpn Sourcetype
 
