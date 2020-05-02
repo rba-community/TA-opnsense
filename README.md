@@ -1,5 +1,7 @@
 # TA-opnsense - Add-on for OPNsense Firewall
 
+[![GitHub](https://img.shields.io/github/license/ZachChristensen28/TA-opnsense)]()
+
  Info | Description
 ------|----------
 Version | 1.2.6 - See on [Splunkbase](https://splunkbase.splunk.com/app/4538/)
