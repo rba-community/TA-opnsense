@@ -13,6 +13,7 @@ The TA-opnsense Add-on allows Splunk data administrators to map the OPNsense fir
 ```
 Version 1.2.8
 - Added compatability for new syslog format released in OPNSense v20.9
+- Updated the 'vendor_options' field to be multi-valued
 ```
 
 Contributors
