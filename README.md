@@ -4,16 +4,17 @@
 
  Info | Description
 ------|----------
-Version | 1.2.8 - See on [Splunkbase](https://splunkbase.splunk.com/app/4538/)
+Version | 1.2.9 - See on [Splunkbase](https://splunkbase.splunk.com/app/4538/)
 Vendor Product Version | [OPNsense 20.7](https://opnsense.org/)
 Add-on has a web UI | No. This add-on does not contain any views.
 
 The TA-opnsense Add-on allows Splunk data administrators to map the OPNsense firewall events to the [CIM](https://docs.splunk.com/Splexicon:CommonInformationModel) enabling the data to be used with other Splunk Apps, such as Enterprise Security.
 
 ```
-Version 1.2.8
-- Added compatability for new syslog format released in OPNSense v20.7
+Version 1.2.9
+- Added compatibility for new syslog format released in OPNSense v20.7
 - Updated the 'vendor_options' field to be multi-valued
+- appinspect fixes
 ```
 
 Contributors
@@ -192,6 +193,10 @@ Please open an issue at [github.com](https://github.com/ZachChristensen28/TA-opn
 ## Versions
 
 ```
+Version 1.2.8
+- Added compatability for new syslog format released in OPNSense v20.7
+- Updated the 'vendor_options' field to be multi-valued
+
 Version 1.2.7
 - Created http status code lookup, removing the dependency for CIM app.
 
