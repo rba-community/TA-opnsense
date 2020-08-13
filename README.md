@@ -4,17 +4,15 @@
 
  Info | Description
 ------|----------
-Version | 1.2.9 - See on [Splunkbase](https://splunkbase.splunk.com/app/4538/)
+Version | 1.3.0 - See on [Splunkbase](https://splunkbase.splunk.com/app/4538/)
 Vendor Product Version | [OPNsense 20.7](https://opnsense.org/)
 Add-on has a web UI | No. This add-on does not contain any views.
 
 The TA-opnsense Add-on allows Splunk data administrators to map the OPNsense firewall events to the [CIM](https://docs.splunk.com/Splexicon:CommonInformationModel) enabling the data to be used with other Splunk Apps, such as Enterprise Security.
 
 ```
-Version 1.2.9
-- Added compatibility for new syslog format released in OPNSense v20.7
-- Updated the 'vendor_options' field to be multi-valued
-- appinspect fixes
+Version 1.3.0
+- Added compatability for eve syslog format for Suricata events
 ```
 
 Contributors
@@ -34,21 +32,6 @@ Heavy Forwarders | Yes | Conditional | Required, if HFs are used to collect this
 Set the sourcetype to "opnsense" in the inputs.conf file on the forwarder.
 
 \* ***See [Installation Walkthrough](#Installation-Walkthrough) for more information***
-
-## IDS (Suricata) Logging Requirements
-
-Log into the OPNsense firewall and ensure the following:
-
-The below steps are necessary for field extractions to work properly.
-
-1. Navigate to Services > Intrusion Detection > Administration
-1. On the "Settings" tab, click the radio button for `advanced mode`
-1. Verify the following:
-  - Enabled (checked)
-  - Enable Syslog Alerts (checked)
-  - Enable eve syslog output (un-checked)
-  - Log package payload (checked)
-1. Click "Apply"
 
 ## Installation Walkthrough
 
@@ -182,7 +165,7 @@ Source type | Description | CIM Data Models
 `opnsense:filterlog` | Filterlog Events | [Network Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic)
 `opnsense:lighttpd` | Events from the Web interface | [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web)
 `opnsense:openvpn` | OpenVPN Events | [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication)
-`opnsense:suricata` | IDS events from suricata | [Intrusion Detection](https://docs.splunk.com/Documentation/CIM/latest/User/IntrusionDetection) [Network Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic)
+`opnsense:suricata` `opnsense:suricata:json` | IDS events from suricata | [Intrusion Detection](https://docs.splunk.com/Documentation/CIM/latest/User/IntrusionDetection) [Network Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic)
 `opnsense:squid` | Proxy events from Squid Proxy | [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web)
 `opnsense:unbound` | DNS events from Unbound DNS | [Network Resolution](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkResolutionDNS)
 
@@ -193,6 +176,11 @@ Please open an issue at [github.com](https://github.com/ZachChristensen28/TA-opn
 ## Versions
 
 ```
+Version 1.2.9
+- Added compatibility for new syslog format released in OPNSense v20.7
+- Updated the 'vendor_options' field to be multi-valued
+- appinspect fixes
+
 Version 1.2.8
 - Added compatability for new syslog format released in OPNSense v20.7
 - Updated the 'vendor_options' field to be multi-valued
