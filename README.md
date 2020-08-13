@@ -33,6 +33,10 @@ Set the sourcetype to "opnsense" in the inputs.conf file on the forwarder.
 
 \* ***See [Installation Walkthrough](#Installation-Walkthrough) for more information***
 
+## IDS (Suricata) Logging Recommendations
+
+Logging IDS events using the eve syslog output setting will provide the most verbose output. Additionally, the payload can be logged by changing the advanced settings. 
+
 ## Installation Walkthrough
 
 ### Data on-boarding using syslog (Rsyslog Example)
