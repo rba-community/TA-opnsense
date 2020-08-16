@@ -12,7 +12,7 @@ The TA-opnsense Add-on allows Splunk data administrators to map the OPNsense fir
 
 ```
 Version 1.3.0
-- Added compatability for eve syslog format for Suricata events
+- Added compatibility for eve syslog format for Suricata events
 ```
 
 Contributors
@@ -35,7 +35,7 @@ Set the sourcetype to "opnsense" in the inputs.conf file on the forwarder.
 
 ## IDS (Suricata) Logging Recommendations
 
-Logging IDS events using the eve syslog output setting will provide the most verbose output. Additionally, the payload can be logged by changing the advanced settings. 
+Logging IDS events using the eve syslog output setting will provide the most verbose output. Additionally, the payload can be logged by changing the advanced settings.
 
 ## Installation Walkthrough
 
