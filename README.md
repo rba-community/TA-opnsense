@@ -20,6 +20,7 @@ Fix
 Contributors
 - [J-C-B](https://github.com/J-C-B)
 - [dgersting](https://github.com/dgersting)
+- [xpac1985](https://github.com/xpac1985)
 
 ### Where to Install
 Splunk platform Instance type | Supported | Required | Actions required/ Comments
