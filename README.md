@@ -14,7 +14,8 @@ The TA-opnsense Add-on allows Splunk data administrators to map the OPNsense fir
 Version 1.3.2
 
 Fix
-- Fixed "unknown" severity for opnsense:suricata:json events
+- Fixed "unknown" severity for opnsense:suricata:json events - issue #27
+- Fixed IGMP events not being extracted - issue #32
 ```
 
 Contributors
