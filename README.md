@@ -16,6 +16,7 @@ Version 1.3.2
 Fix
 - Fixed "unknown" severity for opnsense:suricata:json events - issue #27
 - Fixed IGMP events not being extracted - issue #32
+- Fixed Access logs not being extracted - issue #35
 ```
 
 Contributors
