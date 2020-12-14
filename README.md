@@ -8,6 +8,8 @@ Version | 1.3.2 - See on [Splunkbase](https://splunkbase.splunk.com/app/4538/)
 Vendor Product Version | [OPNsense 20.7](https://opnsense.org/)
 Add-on has a web UI | No. This add-on does not contain any views.
 
+**NEW:** Try the new [OPNsense App for Splunk](https://github.com/ZachChristensen28/Opnsense_App_for_Splunk)!
+
 The TA-opnsense Add-on allows Splunk data administrators to map the OPNsense firewall events to the [CIM](https://docs.splunk.com/Splexicon:CommonInformationModel) enabling the data to be used with other Splunk Apps, such as Enterprise Security.
 
 ```
