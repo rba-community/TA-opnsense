@@ -179,7 +179,7 @@ Source type | Description | CIM Data Models
 `opnsense:dhcpd` | DHCP Events | [Network Sessions](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkSessions)
 `opnsense:filterlog` | Filterlog Events | [Network Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic)
 `opnsense:lighttpd` | Events from the Web interface | [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web)
-`opnsense:openvpn` | OpenVPN Events | [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication)
+`opnsense:openvpn` | OpenVPN Events | [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication) [Network Sessions](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkSessions)
 `opnsense:suricata` `opnsense:suricata:json` | IDS events from suricata | [Intrusion Detection](https://docs.splunk.com/Documentation/CIM/latest/User/IntrusionDetection) [Network Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic)
 `opnsense:squid` | Proxy events from Squid Proxy | [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web)
 `opnsense:unbound` | DNS events from Unbound DNS | [Network Resolution](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkResolutionDNS)
