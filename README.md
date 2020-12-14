@@ -15,6 +15,7 @@ Version 1.3.2
 New
 - Added meta field for event length (opnsense_event_length)
 - Added sourcetype for Syslog-ng logs (opnsense:syslog)
+- Added action for "Redirect" if port forwarding logging rules exist
 
 Fix
 - Fixed "unknown" severity for opnsense:suricata:json events - issue #27

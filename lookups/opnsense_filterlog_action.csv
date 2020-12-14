@@ -1,3 +1,5 @@
 vendor_action,action
 pass,allowed
 block,blocked
+rdr,redirect
+unknown,unknown
