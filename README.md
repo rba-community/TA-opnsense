@@ -12,6 +12,9 @@ The TA-opnsense Add-on allows Splunk data administrators to map the OPNsense fir
 
 ```
 Version 1.3.2
+New
+- Added meta field for event length (opnsense_event_length)
+- Added sourcetype for Syslog-ng logs (opnsense:syslog)
 
 Fix
 - Fixed "unknown" severity for opnsense:suricata:json events - issue #27
@@ -177,6 +180,7 @@ Source type | Description | CIM Data Models
 `opnsense:suricata` `opnsense:suricata:json` | IDS events from suricata | [Intrusion Detection](https://docs.splunk.com/Documentation/CIM/latest/User/IntrusionDetection) [Network Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic)
 `opnsense:squid` | Proxy events from Squid Proxy | [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web)
 `opnsense:unbound` | DNS events from Unbound DNS | [Network Resolution](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkResolutionDNS)
+`opnsense:syslog` | Events from Syslog-ng |
 
 
 ## Bugs
@@ -185,6 +189,9 @@ Please open an issue at [github.com](https://github.com/ZachChristensen28/TA-opn
 ## Versions
 
 ```
+Version 1.3.1
+- fixed KV_MODE for opnsense:unbound sourcetype
+
 Version 1.3.0
 - Added compatibility for eve syslog format for Suricata events
 
