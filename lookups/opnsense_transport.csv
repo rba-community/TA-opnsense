@@ -4,3 +4,4 @@ tcp,tcp
 ICMPv6,icmp
 icmp,icmp
 carp,carp
+igmp,igmp

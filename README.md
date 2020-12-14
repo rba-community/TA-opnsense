@@ -4,17 +4,25 @@
 
  Info | Description
 ------|----------
-Version | 1.3.1 - See on [Splunkbase](https://splunkbase.splunk.com/app/4538/)
+Version | 1.3.2 - See on [Splunkbase](https://splunkbase.splunk.com/app/4538/)
 Vendor Product Version | [OPNsense 20.7](https://opnsense.org/)
 Add-on has a web UI | No. This add-on does not contain any views.
+
+**NEW:** Try the new [OPNsense App for Splunk](https://github.com/ZachChristensen28/Opnsense_App_for_Splunk)!
 
 The TA-opnsense Add-on allows Splunk data administrators to map the OPNsense firewall events to the [CIM](https://docs.splunk.com/Splexicon:CommonInformationModel) enabling the data to be used with other Splunk Apps, such as Enterprise Security.
 
 ```
-Version 1.3.1
+Version 1.3.2
+New
+- Added meta field for event length (opnsense_event_length)
+- Added sourcetype for Syslog-ng logs (opnsense:syslog)
+- Added action for "Redirect" if port forwarding logging rules exist
 
 Fix
-- fixed KV_MODE for opnsense:unbound sourcetype
+- Fixed "unknown" severity for opnsense:suricata:json events - issue #27
+- Fixed IGMP events not being extracted - issue #32
+- Fixed Access logs not being extracted - issue #35
 ```
 
 Contributors
@@ -175,6 +183,7 @@ Source type | Description | CIM Data Models
 `opnsense:suricata` `opnsense:suricata:json` | IDS events from suricata | [Intrusion Detection](https://docs.splunk.com/Documentation/CIM/latest/User/IntrusionDetection) [Network Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic)
 `opnsense:squid` | Proxy events from Squid Proxy | [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web)
 `opnsense:unbound` | DNS events from Unbound DNS | [Network Resolution](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkResolutionDNS)
+`opnsense:syslog` | Events from Syslog-ng |
 
 
 ## Bugs
@@ -183,6 +192,9 @@ Please open an issue at [github.com](https://github.com/ZachChristensen28/TA-opn
 ## Versions
 
 ```
+Version 1.3.1
+- fixed KV_MODE for opnsense:unbound sourcetype
+
 Version 1.3.0
 - Added compatibility for eve syslog format for Suricata events
 
