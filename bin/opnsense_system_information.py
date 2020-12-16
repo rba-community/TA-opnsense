@@ -44,7 +44,7 @@ class ModInputopnsense_system_information(modinput_wrapper.base_modinput.BaseMod
         For customized inputs, hard code the arguments here to hide argument detail from users.
         For other input types, arguments should be get from input_module. Defining new input types could be easier.
         """
-        scheme.add_argument(smi.Argument("opnsense_account_credentials", title="Account Credentials",
+        scheme.add_argument(smi.Argument("account", title="Account Credentials",
                                          description="API Credentials",
                                          required_on_create=True,
                                          required_on_edit=False))
@@ -63,7 +63,7 @@ class ModInputopnsense_system_information(modinput_wrapper.base_modinput.BaseMod
 
     def get_account_fields(self):
         account_fields = []
-        account_fields.append("opnsense_account_credentials")
+        account_fields.append("account")
         return account_fields
 
     def get_checkbox_fields(self):
