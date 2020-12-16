@@ -4,6 +4,7 @@ import os
 import sys
 import time
 import datetime
+import json
 import requests
 from requests.exceptions import RequestException
 import opnsense_constants as constant
@@ -49,7 +50,6 @@ def collect_events(helper, ew):
     url = f'https://{host}/{constant.api_firmware_status}'
 
     try:
-        helper.debug(f'msg="making request", url="{url}"')
         r = requests.get(url, proxies=proxy_config, auth=(api_key, api_secret), verify=False)
     except RequestException as e:
         helper.log_error('msg="Unable to make api call"')
