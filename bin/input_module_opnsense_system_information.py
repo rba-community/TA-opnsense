@@ -18,12 +18,41 @@ def use_single_instance_mode():
 '''
 
 def validate_input(helper, definition):
-    """Implement your own validation logic to validate the input stanza configurations"""
-    # This example accesses the modular input variable
-    # opnsense_account_credentials = definition.parameters.get('opnsense_account_credentials', None)
+    # We have nothing to validate
     pass
 
 def collect_events(helper, ew):
+    # Get Credentials
+    account = helper.get_arg('account')
+    API_KEY = account['username']
+    API_SECRET = account['password']
+    HOST = account['host']
+
+    # Get Log Level
+    log_level = helper.get_log_level()
+    helper.set_log_level(log_level)
+    helper.log_info('msg="Logging level set to: {}"'.format(str(log_level)))
+
+    # Get Stanza Name
+    STANZA_NAME = str(helper.get_input_stanza_names())
+
+    # Get Proxy
+    proxy = helper.get_proxy()
+
+    if proxy:
+        if proxy['proxy_username']:
+            helper.log_info('msg="Proxy is configured with authenticaiton"')
+            helper.log_debug('proxy_type="{}", proxy_url="{}", proxy_port="{}", proxy_username="{}"'.format(proxy['proxy_type'], proxy['proxy_url'], proxy['proxy_port'], proxy['proxy_username']))
+            proxy_string = '{}://{}:{}@{}:{}'.format(proxy['proxy_type'], proxy['proxy_username'], proxy['proxy_password'], proxy['proxy_url'], proxy['proxy_port'])
+        else:
+            helper.log_info('msg="Proxy is configured"')
+            helper.log_debug('proxy_type="{}", proxy_url="{}", proxy_port="{}"'.format(proxy['proxy_type'], proxy['proxy_url'], proxy['proxy_port']))
+            proxy_string = '{}://{}:{}'.format(proxy['proxy_type'], proxy['proxy_url'], proxy['proxy_port'])
+        
+        PROXY_CONFIG = {'http': proxy_string, 'https': proxy_string}
+
+
+    
     """Implement your data collection logic here
 
     # The following examples get the arguments of this input.

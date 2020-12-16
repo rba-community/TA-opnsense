@@ -71,6 +71,24 @@
                             ]
                         },
                         {
+                            "field": "host",
+                            "label": "OPNsense Host",
+                            "type": "text",
+                            "required": true,
+                            "help": "Enter the IP or FQDN for this account.",
+                            "options": {
+                                "placeholder": "Enter the IP/FQDN here"
+                            },
+                            "validators": [
+                                {
+                                    "type": "string",
+                                    "minLength": 1,
+                                    "maxLength": 50,
+                                    "errorMsg": "Length of the OPNSense host should be between 1 and 50"
+                                }
+                            ]
+                        },
+                        {
                             "field": "password",
                             "label": "API Secret",
                             "type": "text",
@@ -263,7 +281,7 @@
                         "label": "Status"
                     },
                     {
-                        "field": "opnsense_account_credentials",
+                        "field": "account",
                         "label": "Account Credentials"
                     }
                 ],
@@ -334,7 +352,7 @@
                             ]
                         },
                         {
-                            "field": "opnsense_account_credentials",
+                            "field": "account",
                             "label": "Account Credentials",
                             "help": "API Credentials",
                             "required": true,

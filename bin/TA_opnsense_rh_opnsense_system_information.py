@@ -34,7 +34,7 @@ fields = [
         )
     ), 
     field.RestField(
-        'opnsense_account_credentials',
+        'account',
         required=True,
         encrypted=False,
         default=None,
