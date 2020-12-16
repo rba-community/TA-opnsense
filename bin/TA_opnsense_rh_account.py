@@ -33,6 +33,16 @@ fields = [
             min_len=1, 
             max_len=8192, 
         )
+    ),
+    field.RestField(
+        'host',
+        required=True,
+        encrypted=False,
+        default=None,
+        validator=validator.String(
+            min_len=1, 
+            max_len=50, 
+        )
     )
 ]
 model = RestModel(fields, name=None)

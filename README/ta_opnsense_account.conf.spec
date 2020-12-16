@@ -1,3 +1,4 @@
 [<name>]
 username = 
 password = 
+host = 

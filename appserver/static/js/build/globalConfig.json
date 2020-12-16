@@ -71,6 +71,22 @@
                             ]
                         },
                         {
+                            "field": "password",
+                            "label": "API Secret",
+                            "type": "text",
+                            "encrypted": true,
+                            "required": true,
+                            "help": "Enter the API Secret for this account.",
+                            "validators": [
+                                {
+                                    "type": "string",
+                                    "minLength": 1,
+                                    "maxLength": 8192,
+                                    "errorMsg": "Length of API Secret should be between 1 and 8192"
+                                }
+                            ]
+                        },
+                        {
                             "field": "host",
                             "label": "OPNsense Host",
                             "type": "text",
@@ -85,22 +101,6 @@
                                     "minLength": 1,
                                     "maxLength": 50,
                                     "errorMsg": "Length of the OPNSense host should be between 1 and 50"
-                                }
-                            ]
-                        },
-                        {
-                            "field": "password",
-                            "label": "API Secret",
-                            "type": "text",
-                            "encrypted": true,
-                            "required": true,
-                            "help": "Enter the API Secret for this account.",
-                            "validators": [
-                                {
-                                    "type": "string",
-                                    "minLength": 1,
-                                    "maxLength": 8192,
-                                    "errorMsg": "Length of API Secret should be between 1 and 8192"
                                 }
                             ]
                         }
@@ -358,7 +358,8 @@
                             "required": true,
                             "type": "singleSelect",
                             "options": {
-                                "referenceName": "account"
+                                "referenceName": "account",
+                                "placeholder": "Select the API Account Credentials"
                             }
                         }
                     ]
