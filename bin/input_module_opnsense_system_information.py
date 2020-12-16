@@ -14,9 +14,9 @@ def validate_input(helper, definition):
 def collect_events(helper, ew):
     # Get Credentials
     account = helper.get_arg('account')
-    api_key = account['username']
-    api_secret = account['password']
-    host = account['host']
+    api_key = account["username"]
+    api_secret = account["password"]
+    host = account["host"]
     
     # Get Log Level
     log_level = helper.get_log_level()
@@ -30,14 +30,14 @@ def collect_events(helper, ew):
     proxy = helper.get_proxy()
 
     if proxy:
-        if proxy['proxy_username']:
+        if proxy["proxy_username"]:
             helper.log_info('msg="Proxy is configured with authenticaiton"')
-            helper.log_debug(f'proxy_type="{proxy['proxy_type']}", proxy_url="{proxy['proxy_url']}", proxy_port="{proxy['proxy_port']}", proxy_username="{proxy['proxy_username']}"')
-            proxy_string = f'{proxy['proxy_type']}://{proxy['proxy_username']}:{proxy['proxy_password']}@{proxy['proxy_url']}:{proxy['proxy_port']}'
+            helper.log_debug(f'proxy_type="{proxy["proxy_type"]}", proxy_url="{proxy["proxy_url"]}", proxy_port="{proxy["proxy_port"]}", proxy_username="{proxy["proxy_username"]}"')
+            proxy_string = f'{proxy["proxy_type"]}://{proxy["proxy_username"]}:{proxy["proxy_password"]}@{proxy["proxy_url"]}:{proxy["proxy_port"]}'
         else:
             helper.log_info('msg="Proxy is configured with no authentication"')
-            helper.log_debug(f'proxy_type="{proxy['proxy_type']}", proxy_url="{proxy['proxy_url']}", proxy_port="{proxy['proxy_port']}"')
-            proxy_string = f'{proxy['proxy_type']}://{proxy['proxy_url']}:{proxy['proxy_port']}'
+            helper.log_debug(f'proxy_type="{proxy["proxy_type"]}", proxy_url="{proxy["proxy_url"]}", proxy_port="{proxy["proxy_port"]}"')
+            proxy_string = f'{proxy["proxy_type"]}://{proxy["proxy_url"]}:{proxy["proxy_port"]}'
         
         proxy_config = {'http': proxy_string, 'https': proxy_string}
     else:
