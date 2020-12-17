@@ -26,8 +26,11 @@ def collect_events(helper, ew):
     helper.set_log_level(log_level)
     helper.log_info(f'log_level="{log_level}"')
 
-    # Get Stanza Name
-    stanza_name = str(helper.get_input_stanza_names())
+    # Get Interval
+    interval = helper.get_arg('interval')
+    
+    # Get Checkpoint
+    state = helper.
 
     # Get Proxy
     proxy = helper.get_proxy()
@@ -57,6 +60,8 @@ def collect_events(helper, ew):
         sys.exit(1)
     
     if r.status_code == 200:
+        # Save Checkpoint
+        helper.save_check_point('test', 'test-state')
         helper.log_info('msg="connection established", action="success"')
         response = json.loads(r.text)
         event = helper.new_event(source=helper.get_input_type(), index=helper.get_output_index(), sourcetype=helper.get_sourcetype(), data=json.dumps(response))

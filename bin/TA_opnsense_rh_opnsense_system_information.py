@@ -18,9 +18,9 @@ fields = [
         'interval',
         required=True,
         encrypted=False,
-        default=None,
+        default='43200',
         validator=validator.Pattern(
-            regex=r"""^\-[1-9]\d*$|^\d*$""", 
+            regex=r"""^[3-9][0-9][0-9]$|^[1-9][0-9][0-9][0-9]\d*$""", 
         )
     ), 
     field.RestField(

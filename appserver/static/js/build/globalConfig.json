@@ -321,13 +321,14 @@
                             "field": "interval",
                             "label": "Interval",
                             "type": "text",
+                            "defaultValue": "43200",
                             "required": true,
-                            "help": "Time interval of input in seconds.",
+                            "help": "Time interval of input in seconds. Min 300 (5 minutes).",
                             "validators": [
                                 {
                                     "type": "regex",
-                                    "pattern": "^\\-[1-9]\\d*$|^\\d*$",
-                                    "errorMsg": "Interval must be an integer."
+                                    "pattern": "^[3-9][0-9][0-9]$|^[1-9][0-9][0-9][0-9]\\d*$",
+                                    "errorMsg": "Interval must be an integer larger than 300."
                                 }
                             ]
                         },
