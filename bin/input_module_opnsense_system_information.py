@@ -140,7 +140,7 @@ def collect_events(helper, ew):
 
         event_count = 0
         for item in response['plugin']:
-            if item['configured'] == '1':
+            if item['installed'] == '1':
                 item['collection_type'] = 'plugin'
                 event = helper.new_event(source=helper.get_input_type(), index=helper.get_output_index(), sourcetype=helper.get_sourcetype(), host=host, data=json.dumps(item))
                 ew.write_event(event)
