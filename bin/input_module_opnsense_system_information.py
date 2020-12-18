@@ -114,6 +114,7 @@ def collect_events(helper, ew):
         if not response:
             return False
 
+        response['collection_type'] = 'system'
         event = helper.new_event(source=helper.get_input_type(), index=helper.get_output_index(
         ), sourcetype=helper.get_sourcetype(), host=host, data=json.dumps(response))
         ew.write_event(event)
