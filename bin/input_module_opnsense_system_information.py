@@ -7,7 +7,7 @@ import requests
 from requests import RequestException
 import opnsense_constants as const
 
-cert_dir = os.path.join(os.path.basename(__file__), const.cert_dir)
+cert_dir = os.path.join(os.path.dirname(__file__), const.cert_dir)
 
 
 def validate_input(helper, definition):
@@ -27,7 +27,11 @@ def collect_events(helper, ew):
     if verify_cert:
         cert = os.path.join(cert_dir, certificate)
         if not os.path.isfile(cert):
-            raise FileNotFoundError(f'Certificate at {cert} not found!')
+            helper.log_error(f'msg="Certificate not found", action="failed"')
+            helper.log_debug(f'msg="missing certificate", certificate_location="{cert}", action="failed"')
+            return False
+        helper.log_info('msg="found certificate", action="success"')
+        helper.log_debug(f'msg="found certificate", certificate_location="{cert}", action="success"')
     else:
         cert = False
 
@@ -101,6 +105,7 @@ def collect_events(helper, ew):
 
         try:
             r = requests.get(url, proxies=proxy_config, auth=(api_key, api_secret), verify=cert)
+            helper.log_debug(f'msg="connection info", proxy_config="{proxy_config}", certificate="{cert}"')
 
             if r.status_code == 200:
                 helper.log_info(f'event_name="{event_name}", msg="connection established", action="success"')

@@ -111,7 +111,7 @@
                             "required": false,
                             "help": "Name of certificate placed in $SPLUNK_HOME/etc/app/TA-opnsense/bin/certificates",
                             "options": {
-                                "placeholder": "OPNsense.pem"
+                                "placeholder": "OPNsense.crt"
                             },
                             "validators": [
                                 {
