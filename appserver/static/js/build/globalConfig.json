@@ -109,7 +109,7 @@
                             "label": "OPNsense Certificate",
                             "type": "text",
                             "required": false,
-                            "help": "Name of certificate placed in $SPLUNK_HOME/etc/app/TA-opnsense/bin/certificates",
+                            "help": "Name of certificate relative to $SPLUNK_HOME/etc/auth",
                             "options": {
                                 "placeholder": "OPNsense.crt"
                             },

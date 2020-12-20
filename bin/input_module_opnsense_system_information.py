@@ -7,7 +7,7 @@ import requests
 from requests import RequestException
 import opnsense_constants as const
 
-cert_dir = os.path.join(os.path.dirname(__file__), const.cert_dir)
+cert_dir = os.path.join(os.environ['SPLUNK_HOME'], 'etc', 'auth')
 
 
 def validate_input(helper, definition):

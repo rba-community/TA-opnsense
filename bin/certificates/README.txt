@@ -1,1 +1,0 @@
-Place Certificates in this directory.
