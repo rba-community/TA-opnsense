@@ -9,17 +9,10 @@ import opnsense_constants as const
 
 cert_dir = os.path.join(os.path.basename(__file__), const.cert_dir)
 
-def validate_input(helper, definition):
-    cert = helper.get_global_setting('certificate')
-    verify_cert = helper.get_global_setting('verify_cert')
 
-    if verify_cert:
-        if not os.path.isfile(os.path.join(cert_dir, cert)):
-            raise ValueError('Certificate does not exist.')
-        else:
-            pass
-    else:
-        pass
+def validate_input(helper, definition):
+    # We have nothing to verify
+    pass
 
 
 def collect_events(helper, ew):
@@ -33,6 +26,8 @@ def collect_events(helper, ew):
 
     if verify_cert:
         cert = os.path.join(cert_dir, certificate)
+        if not os.path.isfile(cert):
+            raise FileNotFoundError(f'Certificate at {cert} not found!')
     else:
         cert = False
 
