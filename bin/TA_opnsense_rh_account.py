@@ -43,6 +43,23 @@ fields = [
             min_len=1, 
             max_len=50, 
         )
+    ),
+    field.RestField(
+        'certificate',
+        required=False,
+        encrypted=False,
+        default=None,
+        validator=validator.String(
+            min_len=1, 
+            max_len=50, 
+        )
+    ),
+    field.RestField(
+        'verify_cert',
+        required=False,
+        encrypted=False,
+        default=True,
+        validator=None
     )
 ]
 model = RestModel(fields, name=None)

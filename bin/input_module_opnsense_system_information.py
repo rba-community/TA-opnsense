@@ -1,15 +1,25 @@
 # encoding = utf-8
 
+import os
 import time
 import json
 import requests
 from requests import RequestException
 import opnsense_constants as const
 
+cert_dir = os.path.join(os.path.basename(__file__), const.cert_dir)
 
 def validate_input(helper, definition):
-    # We have nothing to validate
-    pass
+    cert = helper.get_global_setting('certificate')
+    verify_cert = helper.get_global_setting('verify_cert')
+
+    if verify_cert:
+        if not os.path.isfile(os.path.join(cert_dir, cert)):
+            raise ValueError('Certificate does not exist.')
+        else:
+            pass
+    else:
+        pass
 
 
 def collect_events(helper, ew):
@@ -18,6 +28,13 @@ def collect_events(helper, ew):
     api_key = account["username"]
     api_secret = account["password"]
     host = account["host"]
+    certificate = account["certificate"]
+    verify_cert = account["verify_cert"]
+
+    if verify_cert:
+        cert = os.path.join(cert_dir, certificate)
+    else:
+        cert = False
 
     # Get Log Level
     log_level = helper.get_log_level()
@@ -88,7 +105,7 @@ def collect_events(helper, ew):
             return False
 
         try:
-            r = requests.get(url, proxies=proxy_config, auth=(api_key, api_secret), verify=False)
+            r = requests.get(url, proxies=proxy_config, auth=(api_key, api_secret), verify=cert)
 
             if r.status_code == 200:
                 helper.log_info(f'event_name="{event_name}", msg="connection established", action="success"')

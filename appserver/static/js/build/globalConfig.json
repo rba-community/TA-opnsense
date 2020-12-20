@@ -103,6 +103,32 @@
                                     "errorMsg": "Length of the OPNSense host should be between 1 and 50"
                                 }
                             ]
+                        },
+                        {
+                            "field": "certificate",
+                            "label": "OPNsense Certificate",
+                            "type": "text",
+                            "required": false,
+                            "help": "Name of certificate placed in $SPLUNK_HOME/etc/app/TA-opnsense/bin/certificates",
+                            "options": {
+                                "placeholder": "OPNsense.pem"
+                            },
+                            "validators": [
+                                {
+                                    "type": "string",
+                                    "minLength": 1,
+                                    "maxLength": 50,
+                                    "errorMsg": "Length of the OPNSense host should be between 1 and 50"
+                                }
+                            ]
+                        },
+                        {
+                            "field": "verify_cert",
+                            "label": "Verify Certificate",
+                            "type": "checkbox",
+                            "required": false,
+                            "help": "Check to verify provided server certificate.",
+                            "defaultValue": true
                         }
                     ]
                 },
