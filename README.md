@@ -1,18 +1,18 @@
-# TA-opnsense - Add-on for OPNsense Firewall
+# TA-opnsense - Add-on for OPNsense® Firewall
 
 [![GitHub](https://img.shields.io/github/license/ZachChristensen28/TA-opnsense)]()
 
  Info | Description
 ------|----------
 Version | 1.3.2 - See on [Splunkbase](https://splunkbase.splunk.com/app/4538/)
-Vendor Product Version | [OPNsense 20.7](https://opnsense.org/)
+Vendor Product Version | [OPNsense® 20.7](https://opnsense.org/)
 Add-on has a web UI | No. This add-on does not contain any views.
 
 **NEW:** Try the new [OPNsense App for Splunk](https://github.com/ZachChristensen28/Opnsense_App_for_Splunk)!
 
-The TA-opnsense Add-on allows Splunk data administrators to map the OPNsense firewall events to the [CIM](https://docs.splunk.com/Splexicon:CommonInformationModel) enabling the data to be used with other Splunk Apps, such as Enterprise Security.
+The TA-opnsense Add-on allows Splunk data administrators to map the OPNsense® firewall events to the [CIM](https://docs.splunk.com/Splexicon:CommonInformationModel) enabling the data to be used with other Splunk Apps, such as Enterprise Security.
 
-```
+```TEXT
 Version 1.3.2
 New
 - Added meta field for event length (opnsense_event_length)
@@ -31,6 +31,7 @@ Contributors
 - [xpac1985](https://github.com/xpac1985)
 
 ### Where to Install
+
 Splunk platform Instance type | Supported | Required | Actions required/ Comments
 ----------------------------- | --------- | -------- | --------------------------
 Search Heads | Yes | Yes | Install this add-on to all search heads
@@ -40,6 +41,7 @@ Heavy Forwarders | Yes | Conditional | Required, if HFs are used to collect this
 \* For more information, see Splunk's [documentation](https://docs.splunk.com/Documentation/AddOns/released/Overview/Installingadd-ons) on installing Add-ons.
 
 ## Input Requirements
+
 Set the sourcetype to "opnsense" in the inputs.conf file on the forwarder.
 
 \* ***See [Installation Walkthrough](#Installation-Walkthrough) for more information***
