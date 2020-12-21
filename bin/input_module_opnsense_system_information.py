@@ -27,11 +27,11 @@ def collect_events(helper, ew):
     if verify_cert:
         cert = os.path.join(cert_dir, certificate)
         if not os.path.isfile(cert):
-            helper.log_error(f'msg="Certificate not found", action="failed"')
-            helper.log_debug(f'msg="missing certificate", certificate_location="{cert}", action="failed"')
+            helper.log_error(f'msg="Certificate not found", action="failed", hostname="{host}"')
+            helper.log_debug(f'msg="missing certificate", certificate_location="{cert}", action="failed", hostname="{host}"')
             return False
-        helper.log_info('msg="found certificate", action="success"')
-        helper.log_debug(f'msg="found certificate", certificate_location="{cert}", action="success"')
+        helper.log_info(f'msg="found certificate", action="success", hostname="{host}"')
+        helper.log_debug(f'msg="found certificate", certificate_location="{cert}", action="success", hostname="{host}"')
     else:
         cert = False
 
