@@ -74,20 +74,20 @@ def collect_events(helper, ew):
 
         if helper.get_check_point(key):
             old_state = int(helper.get_check_point(key))
-            helper.log_info(f'event_name="{event_name}", msg="Checkpoint found"')
+            helper.log_info(f'event_name="{event_name}", msg="Checkpoint found", hostname="{host}"')
             helper.log_debug(
-                f'event_name="{event_name}", msg="Checkpoint information", checkpoint="{old_state}", interval="{interval}"')
+                f'event_name="{event_name}", msg="Checkpoint information", checkpoint="{old_state}", interval="{interval}", hostname="{host}"')
 
             if check_time < old_state:
                 helper.log_info(
                     f'event_name="{event_name}", msg="Skipping because interval is too close to previous run", '
-                    f'action="aborted"')
+                    f'action="aborted", hostname="{host}"')
                 return False
             else:
-                helper.log_info(f'event_name="{event_name}", msg="Running scheduled Interval"')
+                helper.log_info(f'event_name="{event_name}", msg="Running scheduled Interval", hostname="{host}"')
 
         else:
-            helper.log_info(f'event_name="{event_name}", msg="Checkpoint file not found"')
+            helper.log_info(f'event_name="{event_name}", msg="Checkpoint file not found", hostname="{host}"')
 
         return True
 
@@ -105,25 +105,25 @@ def collect_events(helper, ew):
 
         try:
             r = requests.get(url, proxies=proxy_config, auth=(api_key, api_secret), verify=cert)
-            helper.log_debug(f'msg="connection info", proxy_config="{proxy_config}", certificate="{cert}"')
+            helper.log_debug(f'msg="connection info", proxy_config="{proxy_config}", certificate="{cert}", hostname="{host}"')
 
             if r.status_code == 200:
-                helper.log_info(f'event_name="{event_name}", msg="connection established", action="success"')
+                helper.log_info(f'event_name="{event_name}", msg="connection established", action="success", hostname="{host}"')
                 return json.loads(r.text)
             else:
-                helper.log_info(f'event_name="{event_name}", msg="connection failed", action="failed"')
-                helper.log_debug(f'event_name="{event_name}", status_code="{r.status_code}", action="failed"')
+                helper.log_info(f'event_name="{event_name}", msg="connection failed", action="failed", hostname="{host}"')
+                helper.log_debug(f'event_name="{event_name}", status_code="{r.status_code}", action="failed", hostname="{host}"')
                 return False
 
         except RequestException as e:
-            helper.log_error(f'event_name="{event_name}", msg="Unable to make api call"')
-            helper.log_debug(f'event_name="{event_name}", error_msg="{e}"')
+            helper.log_error(f'event_name="{event_name}", msg="Unable to make api call", hostname="{host}"')
+            helper.log_debug(f'event_name="{event_name}", error_msg="{e}", hostname="{host}"')
             return False
 
     def get_system_status():
         event_name = 'system_status'
-        helper.log_info(f'event_name="{event_name}", msg="starting system status collection')
-        key = 'opnsense_system'
+        helper.log_info(f'event_name="{event_name}", msg="starting system status collection", hostname="{host}"')
+        key = f'opnsense_system_{host}'
         url = f'https://{host}/{const.api_firmware_status}'
         response = sendit(key, url, event_name)
 
@@ -140,14 +140,14 @@ def collect_events(helper, ew):
         new_state = int(time.time())
         helper.save_check_point(key, new_state)
         helper.log_info(
-            f'event_name="{event_name}", msg="Updating Checkpoint", checkpoint="{new_state}"')
-        helper.log_info(f'event_name="{event_name}", msg="completed", action="success"')
+            f'event_name="{event_name}", msg="Updating Checkpoint", checkpoint="{new_state}", hostname="{host}"')
+        helper.log_info(f'event_name="{event_name}", msg="completed", action="success", hostname="{host}"')
         return True
 
     def get_plugin_info():
         event_name = 'plugin_info'
-        helper.log_info(f'event_name="{event_name}", msg="starting system plugin information collection')
-        key = 'opnsense_info'
+        helper.log_info(f'event_name="{event_name}", msg="starting system plugin information collection", hostname="{host}"')
+        key = f'opnsense_info_{host}'
         url = f'https://{host}/{const.api_firmware_info}'
         response = sendit(key, url, event_name)
 
@@ -166,7 +166,7 @@ def collect_events(helper, ew):
         # Write checkpoint
         new_state = int(time.time())
         helper.save_check_point(key, new_state)
-        helper.log_info(f'event_name="{event_name}", msg="completed", action="success", events_collected="{event_count}"')
+        helper.log_info(f'event_name="{event_name}", msg="completed", action="success", events_collected="{event_count}", hostname="{host}"')
         return True
 
     get_system_status()
