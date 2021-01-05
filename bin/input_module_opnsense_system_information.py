@@ -101,7 +101,7 @@ def collect_events(helper, ew):
         """
         # Skip run if too close to previous run interval
         if not check_run(key, event_name):
-            return False
+            return False, None
 
         try:
             r = requests.get(url, proxies=proxy_config, auth=(api_key, api_secret), verify=cert)
@@ -109,26 +109,26 @@ def collect_events(helper, ew):
 
             if r.status_code == 200:
                 helper.log_info(f'event_name="{event_name}", msg="connection established", action="success", hostname="{host}"')
-                return json.loads(r.text)
+                return True, json.loads(r.text)
             else:
                 helper.log_info(f'event_name="{event_name}", msg="connection failed", action="failed", hostname="{host}"')
                 helper.log_debug(f'event_name="{event_name}", status_code="{r.status_code}", action="failed", hostname="{host}"')
-                return False
+                return False, None
 
         except RequestException as e:
             helper.log_error(f'event_name="{event_name}", msg="Unable to make api call", hostname="{host}"')
             helper.log_debug(f'event_name="{event_name}", error_msg="{e}", hostname="{host}"')
-            return False
+            return False, None
 
     def get_system_status():
         event_name = 'system_status'
         helper.log_info(f'event_name="{event_name}", msg="starting system status collection", hostname="{host}"')
         key = f'opnsense_system_{host}'
         url = f'https://{host}/{const.api_firmware_status}'
-        response = sendit(key, url, event_name)
+        r_succeeded, response = sendit(key, url, event_name)
 
         # Return if Applicable
-        if not response:
+        if not r_succeeded:
             return False
 
         response['collection_type'] = 'system'
@@ -149,24 +149,37 @@ def collect_events(helper, ew):
         helper.log_info(f'event_name="{event_name}", msg="starting system plugin information collection", hostname="{host}"')
         key = f'opnsense_info_{host}'
         url = f'https://{host}/{const.api_firmware_info}'
-        response = sendit(key, url, event_name)
+        r_succeeded, response = sendit(key, url, event_name)
 
         # Return if Applicable
-        if not response:
+        if not r_succeeded:
             return False
 
-        event_count = 0
+        plugin_count = 0
+        package_count = 0
+        for item in response['package']:
+            if item['installed'] == '1':
+                item['collection_type'] = 'package'
+                event = helper.new_event(source=helper.get_input_type(), index=helper.get_output_index(),
+                                         sourcetype=helper.get_sourcetype(), host=host, data=json.dumps(item))
+                ew.write_event(event)
+                package_count += 1
+
         for item in response['plugin']:
             if item['installed'] == '1':
                 item['collection_type'] = 'plugin'
                 event = helper.new_event(source=helper.get_input_type(), index=helper.get_output_index(), sourcetype=helper.get_sourcetype(), host=host, data=json.dumps(item))
                 ew.write_event(event)
-                event_count += 1
+                plugin_count += 1
+
+        event_count = package_count + plugin_count
 
         # Write checkpoint
         new_state = int(time.time())
         helper.save_check_point(key, new_state)
-        helper.log_info(f'event_name="{event_name}", msg="completed", action="success", events_collected="{event_count}", hostname="{host}"')
+        helper.log_info(f'event_name="{event_name}", msg="completed", action="success", events_collected="'
+                        f'{event_count}", package_count="{package_count}", plugin_count="{plugin_count}", hostname='
+                        f'"{host}"')
         return True
 
     get_system_status()
