@@ -70,7 +70,7 @@ def collect_events(helper, ew):
         :return: bool
         """
         current_time = int(time.time())
-        check_time = current_time - interval
+        check_time = current_time - interval + 60
 
         if helper.get_check_point(key):
             old_state = int(helper.get_check_point(key))
