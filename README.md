@@ -1,4 +1,4 @@
-# TA-opnsense - Add-on for OPNsense® Firewall
+# Add-on for OPNsense® Firewall - TA-opnsense
 
 [![GitHub](https://img.shields.io/github/license/ZachChristensen28/TA-opnsense)]()
 [![Documentation Status](https://readthedocs.org/projects/splunk-opnsense-ta-documentation/badge/?version=latest)](https://splunk-opnsense-ta-documentation.readthedocs.io/en/latest/?badge=latest)
@@ -17,7 +17,8 @@ The TA-opnsense Add-on allows Splunk data administrators to map the OPNsense® f
 Version 1.4.0
 
 - Added modular input to pull system information (Available Updates, Versions, Installed Packages/Plugins).
-
+- Updated the suricata sourcetyper to recognize the json data without the standard syslog message header.
+- Fixed ipv6 ICMP events not extracting properly - issue #37
 ```
 
 ## Documentation
