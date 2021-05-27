@@ -19,7 +19,7 @@
     "classification": {
       "intendedAudience": null,
       "categories": [],
-      "developmentStatus": null
+      "developmentStatus": "Production/Stable"
     },
     "commonInformationModels": null,
     "license": {
@@ -33,7 +33,7 @@
       "uri": null
     },
     "releaseNotes": {
-      "name": null,
+      "name": "README",
       "text": "./README.md",
       "uri": null
     }
