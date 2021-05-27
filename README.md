@@ -13,14 +13,16 @@ Add-on has a web UI | No. This add-on does not contain any views.
 
 The TA-opnsense Add-on allows Splunk data administrators to map the OPNsense® firewall events to the [CIM](https://docs.splunk.com/Splexicon:CommonInformationModel) enabling the data to be used with other Splunk Apps, such as Enterprise Security.
 
-## Documentation
-
-Full documentation can be found at https://splunk-opnsense-ta-documentation.rtfd.io.
-
 ```TEXT
 Version 1.4.0
 
+- Added modular input to pull system information (Available Updates, Versions, Installed Packages/Plugins).
+
 ```
+
+## Documentation
+
+Full documentation can be found at https://splunk-opnsense-ta-documentation.rtfd.io.
 
 ## Bugs
 Please open an issue at [github.com](https://github.com/ZachChristensen28/TA-opnsense)
