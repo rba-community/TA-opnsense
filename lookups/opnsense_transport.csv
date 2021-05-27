@@ -2,6 +2,7 @@ vendor_transport,transport
 udp,udp
 tcp,tcp
 ICMPv6,icmp
+ipv6-icmp,icmp
 icmp,icmp
 carp,carp
 igmp,igmp
