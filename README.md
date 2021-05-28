@@ -5,7 +5,7 @@
 
  Info | Description
 ------|----------
-Version | 1.4.1 - See on [Splunkbase](https://splunkbase.splunk.com/app/4538/)
+Version | 1.4.2 - See on [Splunkbase](https://splunkbase.splunk.com/app/4538/)
 Vendor Product Version | [OPNsense® 21.1](https://opnsense.org/)
 Add-on has a web UI | No. This add-on does not contain any views.
 
@@ -14,10 +14,8 @@ Add-on has a web UI | No. This add-on does not contain any views.
 The TA-opnsense Add-on allows Splunk data administrators to map the OPNsense® firewall events to the [CIM](https://docs.splunk.com/Splexicon:CommonInformationModel) enabling the data to be used with other Splunk Apps, such as Enterprise Security.
 
 ```TEXT
-Version 1.4.1
+Version 1.4.2
 
-- Fixed incorrect sourcetype transform for modular input - issue #41
-- Increased the truncate limit to allow large events.
 ```
 
 ## Documentation
