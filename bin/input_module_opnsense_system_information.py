@@ -7,8 +7,6 @@ import requests
 from requests import RequestException
 import opnsense_constants as const
 
-cert_dir = os.path.join(os.environ['SPLUNK_HOME'], 'etc', 'auth')
-
 
 def validate_input(helper, definition):
     # We have nothing to verify
@@ -25,15 +23,25 @@ def collect_events(helper, ew):
     verify_cert = account["verify_cert"]
 
     if verify_cert:
-        cert = os.path.join(cert_dir, certificate)
-        if not os.path.isfile(cert):
+        # Check for absolute path
+        if os.path.isfile(certificate):
+            check_cert = certificate
+
+        # Check for Relative path to $SPLUNK_HOME/etc/auth
+        elif os.path.isfile(os.path.join(os.path.join(os.environ['SPLUNK_HOME'], 'etc', 'auth'), certificate)):
+            check_cert = os.path.join(os.path.join(os.environ['SPLUNK_HOME'], 'etc', 'auth'), certificate)
+
+        # Fail to locate certificate
+        else:
             helper.log_error(f'msg="Certificate not found", action="failed", hostname="{host}"')
-            helper.log_debug(f'msg="missing certificate", certificate_location="{cert}", action="failed", hostname="{host}"')
+            helper.log_debug(f'msg="missing certificate", certificate_location="{certificate}", action="failed", hostname="{host}"')
             return False
+
         helper.log_info(f'msg="found certificate", action="success", hostname="{host}"')
-        helper.log_debug(f'msg="found certificate", certificate_location="{cert}", action="success", hostname="{host}"')
+        helper.log_debug(f'msg="found certificate", certificate_location="{check_cert}", action="success", hostname="{host}"')
+
     else:
-        cert = False
+        check_cert = False
 
     # Get Log Level
     log_level = helper.get_log_level()
@@ -104,8 +112,8 @@ def collect_events(helper, ew):
             return False, None
 
         try:
-            r = requests.get(url, proxies=proxy_config, auth=(api_key, api_secret), verify=cert)
-            helper.log_debug(f'msg="connection info", proxy_config="{proxy_config}", certificate="{cert}", hostname="{host}"')
+            r = requests.get(url, proxies=proxy_config, auth=(api_key, api_secret), verify=check_cert)
+            helper.log_debug(f'msg="connection info", proxy_config="{proxy_config}", certificate="{check_cert}", hostname="{host}"')
 
             if r.status_code == 200:
                 helper.log_info(f'event_name="{event_name}", msg="connection established", action="success", hostname="{host}"')
