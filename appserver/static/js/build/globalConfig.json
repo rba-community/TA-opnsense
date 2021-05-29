@@ -109,7 +109,7 @@
                             "label": "OPNsense Certificate",
                             "type": "text",
                             "required": false,
-                            "help": "Name of certificate relative to $SPLUNK_HOME/etc/auth",
+                            "help": "Name of certificate relative to $SPLUNK_HOME/etc/auth or an absolute path.",
                             "options": {
                                 "placeholder": "OPNsense.crt"
                             },
