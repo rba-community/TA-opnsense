@@ -17,6 +17,7 @@ The TA-opnsense Add-on allows Splunk data administrators to map the OPNsense® f
 Version 1.4.2
 
 - Adding support for absolute paths in modular input setup for certificates.
+- Fixed issue with the Verify Certificate checkbox not working properly - #47
 ```
 
 ## Documentation
