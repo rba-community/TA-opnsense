@@ -22,7 +22,7 @@ def collect_events(helper, ew):
     certificate = account["certificate"]
     verify_cert = account["verify_cert"]
 
-    if verify_cert == 1:
+    if verify_cert == "1":
         # Check for absolute path
         if os.path.isfile(certificate):
             check_cert = certificate
