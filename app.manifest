@@ -47,7 +47,7 @@
   },
   "dependencies": null,
   "tasks": [
-    "input://opnsense_system_information"
+    "opnsense_system_information"
   ],
   "inputGroups": null,
   "incompatibleApps": null,
