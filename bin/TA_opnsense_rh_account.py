@@ -20,18 +20,18 @@ fields = [
         encrypted=False,
         default=None,
         validator=validator.String(
-            min_len=1, 
-            max_len=200, 
+            min_len=1,
+            max_len=200,
         )
-    ), 
+    ),
     field.RestField(
         'password',
         required=True,
         encrypted=True,
         default=None,
         validator=validator.String(
-            min_len=1, 
-            max_len=8192, 
+            min_len=1,
+            max_len=8192,
         )
     ),
     field.RestField(
@@ -40,8 +40,8 @@ fields = [
         encrypted=False,
         default=None,
         validator=validator.String(
-            min_len=1, 
-            max_len=50, 
+            min_len=1,
+            max_len=50,
         )
     ),
     field.RestField(
@@ -50,8 +50,8 @@ fields = [
         encrypted=False,
         default=None,
         validator=validator.String(
-            min_len=1, 
-            max_len=50, 
+            min_len=1,
+            max_len=500,
         )
     ),
     field.RestField(

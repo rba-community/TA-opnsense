@@ -1,3 +1,4 @@
+@placement search-head
 [proxy]
 proxy_enabled = 
 proxy_type = 

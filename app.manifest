@@ -5,7 +5,7 @@
     "id": {
       "group": null,
       "name": "TA-opnsense",
-      "version": "1.4.1"
+      "version": "1.4.2"
     },
     "author": [
       {
@@ -47,7 +47,7 @@
   },
   "dependencies": null,
   "tasks": [
-    "input://opnsense_system_information"
+    "opnsense_system_information"
   ],
   "inputGroups": null,
   "incompatibleApps": null,

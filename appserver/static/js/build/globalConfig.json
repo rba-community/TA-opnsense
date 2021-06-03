@@ -109,7 +109,7 @@
                             "label": "OPNsense Certificate",
                             "type": "text",
                             "required": false,
-                            "help": "Name of certificate relative to $SPLUNK_HOME/etc/auth",
+                            "help": "Name of certificate relative to $SPLUNK_HOME/etc/auth or an absolute path.",
                             "options": {
                                 "placeholder": "OPNsense.crt"
                             },
@@ -117,8 +117,8 @@
                                 {
                                     "type": "string",
                                     "minLength": 1,
-                                    "maxLength": 50,
-                                    "errorMsg": "Length of the OPNSense host should be between 1 and 50"
+                                    "maxLength": 500,
+                                    "errorMsg": "Length Path should be between 1 and 500"
                                 }
                             ]
                         },
