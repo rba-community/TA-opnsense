@@ -18,28 +18,28 @@ fields = [
         'interval',
         required=True,
         encrypted=False,
-        default='43200',
+        default='1 */4 * * *',
         validator=validator.Pattern(
-            regex=r"""^[3-9][0-9][0-9]$|^[1-9][0-9][0-9][0-9]\d*$""", 
+            regex=r"""(?:(?:^[3-9][0-9][0-9]$|^[1-9][0-9][0-9][0-9]\d*$)|(?:^\S+(?: \S+){4}))""",
         )
-    ), 
+    ),
     field.RestField(
         'index',
         required=True,
         encrypted=False,
         default='default',
         validator=validator.String(
-            min_len=1, 
-            max_len=80, 
+            min_len=1,
+            max_len=80,
         )
-    ), 
+    ),
     field.RestField(
         'account',
         required=True,
         encrypted=False,
         default=None,
         validator=None
-    ), 
+    ),
 
     field.RestField(
         'disabled',

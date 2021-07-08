@@ -347,14 +347,16 @@
                             "field": "interval",
                             "label": "Interval",
                             "type": "text",
-                            "defaultValue": "43200",
                             "required": true,
-                            "help": "Time interval of input in seconds. Min 300 (5 minutes).",
+                            "help": "Time interval of input in seconds, minimum 300s (5 minutes) or a valid cron schedule.",
+                            "options": {
+                                "placeholder": "1 */4 * * *"
+                            },
                             "validators": [
                                 {
                                     "type": "regex",
-                                    "pattern": "^[3-9][0-9][0-9]$|^[1-9][0-9][0-9][0-9]\\d*$",
-                                    "errorMsg": "Interval must be an integer larger than 300."
+                                    "pattern": "(?:(?:^[3-9][0-9][0-9]$|^[1-9][0-9][0-9][0-9]\\d*$)|(?:^\\S+(?: \\S+){4}))",
+                                    "errorMsg": "Interval must be an integer larger than 300 or a valid cron schedule."
                                 }
                             ]
                         },
