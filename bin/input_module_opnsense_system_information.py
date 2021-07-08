@@ -109,12 +109,13 @@ def collect_events(helper, ew):
 
         return True
 
-    def sendit(key, url, event_name):
+    def sendit(key, url, event_name, post=False):
         """Send Request
 
         :param key: Key for checkpointer
         :param url: url to send request
         :param event_name: Name of event performing the request
+        :param post: Set to true if "POST" otherwise "GET"
         :return: response
         """
         # Skip run if too close to previous run interval
@@ -122,8 +123,13 @@ def collect_events(helper, ew):
             return False, None
 
         try:
-            r = requests.get(url, proxies=proxy_config, auth=(
-                api_key, api_secret), verify=check_cert)
+            if post:
+                r = requests.post(url, proxies=proxy_config, auth=(
+                    api_key, api_secret), verify=check_cert)
+            else:
+                r = requests.get(url, proxies=proxy_config, auth=(
+                    api_key, api_secret), verify=check_cert)
+
             helper.log_debug(
                 f'msg="connection info", proxy_config="{proxy_config}", certificate="{check_cert}", hostname="{host}"')
 
@@ -151,7 +157,7 @@ def collect_events(helper, ew):
             f'event_name="{event_name}", msg="starting system status collection", hostname="{host}"')
         key = f'opnsense_system_{host}'
         url = f'https://{host}/{const.api_firmware_status}'
-        r_succeeded, response = sendit(key, url, event_name)
+        r_succeeded, response = sendit(key, url, event_name, post=True)
 
         # Return if Applicable
         if not r_succeeded:
