@@ -5,7 +5,7 @@
 
  Info | Description
 ------|----------
-Version | 1.4.2 - See on [Splunkbase](https://splunkbase.splunk.com/app/4538/)
+Version | 1.4.3 - See on [Splunkbase](https://splunkbase.splunk.com/app/4538/)
 Vendor Product Version | [OPNsense® 21.1](https://opnsense.org/)
 Add-on has a web UI | No. This add-on does not contain any views.
 
@@ -14,10 +14,11 @@ Add-on has a web UI | No. This add-on does not contain any views.
 The TA-opnsense Add-on allows Splunk data administrators to map the OPNsense® firewall events to the [CIM](https://docs.splunk.com/Splexicon:CommonInformationModel) enabling the data to be used with other Splunk Apps, such as Enterprise Security.
 
 ```TEXT
-Version 1.4.2
+Version 1.4.3
 
-- Adding support for absolute paths in modular input setup for certificatesm- #44
-- Fixed issue with the Verify Certificate checkbox not working properly - #47
+- fixed script to initial an upgrade check - #49
+- added ability to use a cron schedule for the modular input interval - #52
+- added ability to specify port number for modular input - #53
 ```
 
 ## Documentation
