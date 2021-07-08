@@ -32,7 +32,7 @@ def sendit(opn_host, event_name, helper, endpoint=None, method='GET', params=Non
     try:
         account['api_port']
     except KeyError:
-        helper.log_info('msg="API port not defined"')
+        helper.log_info(f'msg="API port not defined", hostname="{opn_host}"')
     else:
         api_port = account['api_port']
 
