@@ -17,6 +17,7 @@ The TA-opnsense Add-on allows Splunk data administrators to map the OPNsense® f
 Version 1.4.3
 
 - fixed script to initial an upgrade check - #49
+- adding ability to use a cron schedule for the modular input interval - #52
 ```
 
 ## Documentation
