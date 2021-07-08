@@ -28,8 +28,16 @@ def sendit(opn_host, event_name, helper, endpoint=None, method='GET', params=Non
     api_secret = account["password"]
     certificate = account["certificate"]
     verify_cert = account["verify_cert"]
-    if account['api_port']:
-        url = f'https://{opn_host}:{helper.get_arg("account")["api_port"]}/{endpoint}'
+    api_port = None
+    try:
+        account['api_port']
+    except KeyError:
+        helper.log_info('msg="API port not defined"')
+    else:
+        api_port = account['api_port']
+
+    if api_port:
+        url = f'https://{opn_host}:{api_port}/{endpoint}'
     else:
         url = f'https://{opn_host}/{endpoint}'
 
@@ -40,7 +48,7 @@ def sendit(opn_host, event_name, helper, endpoint=None, method='GET', params=Non
     proxy = helper.get_proxy()
     if proxy:
         if proxy["proxy_username"]:
-            helper.log_info('msg="Proxy is configured with authenticaiton"')
+            helper.log_info('msg="Proxy is configured with authentication"')
             helper.log_debug(
                 f'proxy_type="{proxy["proxy_type"]}", proxy_url="{proxy["proxy_url"]}", proxy_port="{proxy["proxy_port"]}", proxy_username="{proxy["proxy_username"]}"')
             proxy_string = f'{proxy["proxy_type"]}://{proxy["proxy_username"]}:{proxy["proxy_password"]}@{proxy["proxy_url"]}:{proxy["proxy_port"]}'
