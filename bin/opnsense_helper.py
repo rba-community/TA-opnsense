@@ -23,11 +23,12 @@ def sendit(opn_host, event_name, helper, endpoint=None, method='GET', params=Non
     if not opn_checkpointer(opn_host, event_name, helper):
         return False
 
-    api_key = helper.get_arg('account')['username']
-    api_secret = helper.get_arg('account')["password"]
-    certificate = helper.get_arg('account')["certificate"]
-    verify_cert = helper.get_arg('account')["verify_cert"]
-    if helper.get_arg('account')['api_port']:
+    account = helper.get_arg('account')
+    api_key = account['username']
+    api_secret = account["password"]
+    certificate = account["certificate"]
+    verify_cert = account["verify_cert"]
+    if account['api_port']:
         url = f'https://{opn_host}:{helper.get_arg("account")["api_port"]}/{endpoint}'
     else:
         url = f'https://{opn_host}/{endpoint}'
