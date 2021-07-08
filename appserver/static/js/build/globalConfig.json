@@ -21,8 +21,16 @@
                                 "label": "Account name"
                             },
                             {
-                                "field": "username",
-                                "label": "API Key"
+                                "field": "host",
+                                "label": "Host"
+                            },
+                            {
+                                "field": "api_port",
+                                "label": "API Port"
+                            },
+                            {
+                                "field": "certificate",
+                                "label": "Certificate Path"
                             }
                         ],
                         "actions": [
@@ -101,6 +109,26 @@
                                     "minLength": 1,
                                     "maxLength": 50,
                                     "errorMsg": "Length of the OPNSense host should be between 1 and 50"
+                                }
+                            ]
+                        },
+                        {
+                            "field": "api_port",
+                            "label": "Port",
+                            "type": "text",
+                            "required": false,
+                            "help": "(Optional) Enter the Port number used for the API.",
+                            "options": {
+                                "placeholder": "8080"
+                            },
+                            "validators": [
+                                {
+                                    "type": "number",
+                                    "range": [
+                                        1,
+                                        65535
+                                    ],
+                                    "errorMsg": "Select a valid port number"
                                 }
                             ]
                         },

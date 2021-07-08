@@ -16,17 +16,30 @@ def sendit(opn_host, event_name, helper, endpoint=None, method='GET', params=Non
     :param endpoint: API endpoint
     :param method: Method for new Request
     :param params: Parameters for request
+    :param params: Port to use for call
     :return: response
     """
     # Skip run if too close to previous run interval
     if not opn_checkpointer(opn_host, event_name, helper):
         return False
 
-    api_key = helper.get_arg('account')['username']
-    api_secret = helper.get_arg('account')["password"]
-    certificate = helper.get_arg('account')["certificate"]
-    verify_cert = helper.get_arg('account')["verify_cert"]
-    url = f'https://{opn_host}/{endpoint}'
+    account = helper.get_arg('account')
+    api_key = account['username']
+    api_secret = account["password"]
+    certificate = account["certificate"]
+    verify_cert = account["verify_cert"]
+    api_port = None
+    try:
+        account['api_port']
+    except KeyError:
+        helper.log_info(f'msg="API port not defined", hostname="{opn_host}"')
+    else:
+        api_port = account['api_port']
+
+    if api_port:
+        url = f'https://{opn_host}:{api_port}/{endpoint}'
+    else:
+        url = f'https://{opn_host}/{endpoint}'
 
     helper.log_info(
         f'event_name="{event_name}", msg="starting {event_name} collection", hostname="{opn_host}"')
@@ -35,7 +48,7 @@ def sendit(opn_host, event_name, helper, endpoint=None, method='GET', params=Non
     proxy = helper.get_proxy()
     if proxy:
         if proxy["proxy_username"]:
-            helper.log_info('msg="Proxy is configured with authenticaiton"')
+            helper.log_info('msg="Proxy is configured with authentication"')
             helper.log_debug(
                 f'proxy_type="{proxy["proxy_type"]}", proxy_url="{proxy["proxy_url"]}", proxy_port="{proxy["proxy_port"]}", proxy_username="{proxy["proxy_username"]}"')
             proxy_string = f'{proxy["proxy_type"]}://{proxy["proxy_username"]}:{proxy["proxy_password"]}@{proxy["proxy_url"]}:{proxy["proxy_port"]}'
