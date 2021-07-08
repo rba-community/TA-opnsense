@@ -16,6 +16,7 @@ def sendit(opn_host, event_name, helper, endpoint=None, method='GET', params=Non
     :param endpoint: API endpoint
     :param method: Method for new Request
     :param params: Parameters for request
+    :param params: Port to use for call
     :return: response
     """
     # Skip run if too close to previous run interval
@@ -26,7 +27,10 @@ def sendit(opn_host, event_name, helper, endpoint=None, method='GET', params=Non
     api_secret = helper.get_arg('account')["password"]
     certificate = helper.get_arg('account')["certificate"]
     verify_cert = helper.get_arg('account')["verify_cert"]
-    url = f'https://{opn_host}/{endpoint}'
+    if helper.get_arg('account')['api_port']:
+        url = f'https://{opn_host}:{helper.get_arg("account")["api_port"]}/{endpoint}'
+    else:
+        url = f'https://{opn_host}/{endpoint}'
 
     helper.log_info(
         f'event_name="{event_name}", msg="starting {event_name} collection", hostname="{opn_host}"')
