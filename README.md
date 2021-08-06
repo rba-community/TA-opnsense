@@ -16,6 +16,7 @@ The TA-opnsense Add-on allows Splunk data administrators to map the OPNsense® f
 ```TEXT
 Version 1.4.4
 
+- updated to latest add-on builder version
 ```
 
 ## Documentation
