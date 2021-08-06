@@ -4,7 +4,8 @@
         "displayName": "opnsense",
         "version": "1.0.0",
         "apiVersion": "3.0.0",
-        "restRoot": "TA_opnsense"
+        "restRoot": "TA_opnsense",
+        "schemaVersion": "0.0.2"
     },
     "pages": {
         "configuration": {
@@ -392,11 +393,10 @@
                             "field": "index",
                             "label": "Index",
                             "type": "singleSelect",
-                            "defaultValue": "default",
                             "options": {
                                 "endpointUrl": "data/indexes",
-                                "blackList": "^_.*$",
-                                "createSearchChoice": true
+                                "createSearchChoice": true,
+                                "denyList": "^_.*$"
                             },
                             "required": true,
                             "validators": [
