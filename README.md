@@ -19,7 +19,7 @@ Version 1.5.0
 Note:
     This version includes the packages for the new version of Add-on builder which may cause API credentials to be lost. After updating to this version, you may have to re-enter the API credentials for the modular inputs to work again.
 
-
+- Deprecating sourcetype "opnsense:access" and moving to "opnsense:audit"
 - updated to latest add-on builder version
 
 ```
