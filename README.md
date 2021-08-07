@@ -5,7 +5,7 @@
 
  Info | Description
 ------|----------
-Version | 1.5.0 - See on [Splunkbase](https://splunkbase.splunk.com/app/4538/)
+Version | 1.5.1 - See on [Splunkbase](https://splunkbase.splunk.com/app/4538/)
 Vendor Product Version | [OPNsense® 21.7](https://opnsense.org/)
 Add-on has a web UI | No. This add-on does not contain any views.
 
@@ -14,14 +14,7 @@ Add-on has a web UI | No. This add-on does not contain any views.
 The TA-opnsense Add-on allows Splunk data administrators to map the OPNsense® firewall events to the [CIM](https://docs.splunk.com/Splexicon:CommonInformationModel) enabling the data to be used with other Splunk Apps, such as Enterprise Security.
 
 ```TEXT
-Version 1.5.0
-
-Note:
-    This version includes the packages for the new version of Add-on builder which may cause API credentials to be lost. After updating to this version, you may have to re-enter the API credentials for the modular inputs to work again.
-
-- deprecating sourcetype "opnsense:access" and moving to "opnsense:audit"
-- updated CIM mapping for Authentication events
-- updated to latest add-on builder version
+Version 1.5.1
 
 ```
 
