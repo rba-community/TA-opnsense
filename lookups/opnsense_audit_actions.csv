@@ -1,0 +1,4 @@
+signature,action
+*successful*,success
+*error*,failure
+*not*,failure
