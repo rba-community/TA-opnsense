@@ -16,6 +16,7 @@ The TA-opnsense Add-on allows Splunk data administrators to map the OPNsense® f
 ```TEXT
 Version 1.5.1
 
+- Updating field extractions for Suricata events in Drop mode - #58
 ```
 
 ## Documentation
