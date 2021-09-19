@@ -2,6 +2,9 @@
 
 [![GitHub](https://img.shields.io/github/license/ZachChristensen28/TA-opnsense)]()
 [![Documentation Status](https://readthedocs.org/projects/splunk-opnsense-ta-documentation/badge/?version=latest)](https://splunk-opnsense-ta-documentation.readthedocs.io/en/latest/?badge=latest)
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/ZachChristensen28/TA-opnsense)
+[![Splunkbase App](https://img.shields.io/badge/Splunkbase-TA--opnsense-blue)](https://splunkbase.splunk.com/app/4538/)
+[![Splunk CIM Version](https://img.shields.io/badge/Splunk%20CIM%20Version-4.x-success)](https://docs.splunk.com/Documentation/CIM/latest/User/Overview)
 
  Info | Description
 ------|----------
