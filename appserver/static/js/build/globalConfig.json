@@ -118,9 +118,9 @@
                             "label": "Port",
                             "type": "text",
                             "required": false,
-                            "help": "(Optional) Enter the Port number used for the API.",
+                            "help": "(Optional) Enter the Port number used for the API (If different from default 443).",
                             "options": {
-                                "placeholder": "8080"
+                                "placeholder": "8080 (default 443)"
                             },
                             "validators": [
                                 {
