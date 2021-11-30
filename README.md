@@ -21,6 +21,7 @@ Version 1.5.1
 
 - Updating field extractions for Suricata events in Drop mode - #58
 - Adding default allowed action for suricata events
+- Fixed certificate issue when no cert checking is enabled - issue #61
 ```
 
 ## Documentation

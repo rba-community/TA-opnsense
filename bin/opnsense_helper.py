@@ -26,7 +26,6 @@ def sendit(opn_host, event_name, helper, endpoint=None, method='GET', params=Non
     account = helper.get_arg('account')
     api_key = account['username']
     api_secret = account["password"]
-    certificate = account["certificate"]
     verify_cert = account["verify_cert"]
     api_port = None
     try:
@@ -63,6 +62,7 @@ def sendit(opn_host, event_name, helper, endpoint=None, method='GET', params=Non
         proxy_config = None
 
     if verify_cert == "1":
+        certificate = account["certificate"]
         if os.path.isfile(certificate):
             check_cert = certificate
         # Check for Relative path to $SPLUNK_HOME/etc/auth
