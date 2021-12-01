@@ -8,7 +8,7 @@
 
  Info | Description
 ------|----------
-Version | 1.5.1 - See on [Splunkbase](https://splunkbase.splunk.com/app/4538/)
+Version | 1.5.2 - See on [Splunkbase](https://splunkbase.splunk.com/app/4538/)
 Vendor Product Version | [OPNsense® 21.7](https://opnsense.org/)
 Add-on has a web UI | No. This add-on does not contain any views.
 
@@ -17,11 +17,9 @@ Add-on has a web UI | No. This add-on does not contain any views.
 The TA-opnsense Add-on allows Splunk data administrators to map the OPNsense® firewall events to the [CIM](https://docs.splunk.com/Splexicon:CommonInformationModel) enabling the data to be used with other Splunk Apps, such as Enterprise Security.
 
 ```TEXT
-Version 1.5.1
+Version 1.5.2
 
-- Updating field extractions for Suricata events in Drop mode - #58
-- Adding default allowed action for suricata events
-- Fixed certificate issue when no cert checking is enabled - issue #61
+
 ```
 
 ## Documentation
