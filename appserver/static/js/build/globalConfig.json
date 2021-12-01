@@ -383,7 +383,7 @@
                             "label": "Interval",
                             "type": "text",
                             "required": true,
-                            "help": "Time interval of input in seconds, minimum 300s (5 minutes) or a valid cron schedule.",
+                            "help": "Time interval of input in seconds, minimum 300 (5 minutes) or a valid cron schedule.",
                             "options": {
                                 "placeholder": "1 */4 * * *"
                             },
