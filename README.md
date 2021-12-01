@@ -10,7 +10,7 @@
 ------|----------
 Version | 1.5.2 - See on [Splunkbase](https://splunkbase.splunk.com/app/4538/)
 Vendor Product Version | [OPNsense® 21.7](https://opnsense.org/)
-Add-on has a web UI | No. This add-on does not contain any views.
+Add-on has a web UI | Yes, this add-on has a view to setup a modular input.
 
 **NEW:** Try the new [OPNsense App for Splunk](https://github.com/ZachChristensen28/Opnsense_App_for_Splunk)!
 
