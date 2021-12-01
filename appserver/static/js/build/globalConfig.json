@@ -47,6 +47,9 @@
                             "type": "text",
                             "required": true,
                             "help": "Enter a unique name for this account.",
+                            "options": {
+                                "placeholder": "Enter the Account Name"
+                            },
                             "validators": [
                                 {
                                     "type": "string",
@@ -86,6 +89,9 @@
                             "encrypted": true,
                             "required": true,
                             "help": "Enter the API Secret for this account.",
+                            "options": {
+                                "placeholder": "Enter the API Secret here"
+                            },
                             "validators": [
                                 {
                                     "type": "string",
@@ -140,7 +146,7 @@
                             "required": false,
                             "help": "Name of certificate relative to $SPLUNK_HOME/etc/auth or an absolute path.",
                             "options": {
-                                "placeholder": "OPNsense.crt"
+                                "placeholder": "Optional"
                             },
                             "validators": [
                                 {
