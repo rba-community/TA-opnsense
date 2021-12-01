@@ -47,6 +47,9 @@
                             "type": "text",
                             "required": true,
                             "help": "Enter a unique name for this account.",
+                            "options": {
+                                "placeholder": "Enter the Account Name"
+                            },
                             "validators": [
                                 {
                                     "type": "string",
@@ -86,6 +89,9 @@
                             "encrypted": true,
                             "required": true,
                             "help": "Enter the API Secret for this account.",
+                            "options": {
+                                "placeholder": "Enter the API Secret here"
+                            },
                             "validators": [
                                 {
                                     "type": "string",
@@ -118,9 +124,9 @@
                             "label": "Port",
                             "type": "text",
                             "required": false,
-                            "help": "(Optional) Enter the Port number used for the API.",
+                            "help": "(Optional) Enter the Port number used for the API (If different from default, 443).",
                             "options": {
-                                "placeholder": "8080"
+                                "placeholder": "Optional"
                             },
                             "validators": [
                                 {
@@ -140,7 +146,7 @@
                             "required": false,
                             "help": "Name of certificate relative to $SPLUNK_HOME/etc/auth or an absolute path.",
                             "options": {
-                                "placeholder": "OPNsense.crt"
+                                "placeholder": "Optional"
                             },
                             "validators": [
                                 {
@@ -377,7 +383,7 @@
                             "label": "Interval",
                             "type": "text",
                             "required": true,
-                            "help": "Time interval of input in seconds, minimum 300s (5 minutes) or a valid cron schedule.",
+                            "help": "Time interval of input in seconds, minimum 300 (5 minutes) or a valid cron schedule.",
                             "options": {
                                 "placeholder": "1 */4 * * *"
                             },
