@@ -5,7 +5,7 @@
         "version": "1.0.0",
         "apiVersion": "3.0.0",
         "restRoot": "TA_opnsense",
-        "schemaVersion": "0.0.2"
+        "schemaVersion": "0.0.3"
     },
     "pages": {
         "configuration": {
@@ -46,9 +46,9 @@
                             "label": "Account name",
                             "type": "text",
                             "required": true,
-                            "help": "Enter a unique name for this account.",
+                            "help": "Enter a unique name for this account (no spaces).",
                             "options": {
-                                "placeholder": "Enter the Account Name"
+                                "placeholder": "OPN_01"
                             },
                             "validators": [
                                 {
@@ -106,16 +106,16 @@
                             "label": "OPNsense Host",
                             "type": "text",
                             "required": true,
-                            "help": "Enter the IP or FQDN for this account.",
+                            "help": "Enter the FQDN/PI for this account.",
                             "options": {
-                                "placeholder": "Enter the IP/FQDN here"
+                                "placeholder": "opnsense01.domain.com"
                             },
                             "validators": [
                                 {
                                     "type": "string",
                                     "minLength": 1,
-                                    "maxLength": 50,
-                                    "errorMsg": "Length of the OPNSense host should be between 1 and 50"
+                                    "maxLength": 200,
+                                    "errorMsg": "Length of the OPNSense host should be between 1 and 200"
                                 }
                             ]
                         },
@@ -124,9 +124,9 @@
                             "label": "Port",
                             "type": "text",
                             "required": false,
-                            "help": "(Optional) Enter the Port number used for the API (If different from default, 443).",
+                            "help": "(Optional) Enter the Port number used for the API (default: 443).",
                             "options": {
-                                "placeholder": "Optional"
+                                "placeholder": "8080"
                             },
                             "validators": [
                                 {
@@ -144,9 +144,9 @@
                             "label": "OPNsense Certificate",
                             "type": "text",
                             "required": false,
-                            "help": "Name of certificate relative to $SPLUNK_HOME/etc/auth or an absolute path.",
+                            "help": "Name of CA certificate relative to $SPLUNK_HOME/etc/auth or an absolute path.",
                             "options": {
-                                "placeholder": "Optional"
+                                "placeholder": "mycerts/ca.pem"
                             },
                             "validators": [
                                 {
@@ -312,6 +312,10 @@
                         "label": "Name"
                     },
                     {
+                        "field": "account",
+                        "label": "Account"
+                    },
+                    {
                         "field": "interval",
                         "label": "Interval"
                     },
@@ -339,11 +343,11 @@
                     },
                     {
                         "field": "disabled",
-                        "label": "Status"
+                        "label": "Disabled"
                     },
                     {
                         "field": "account",
-                        "label": "Account Credentials"
+                        "label": "Accounts"
                     }
                 ],
                 "actions": [
@@ -362,7 +366,7 @@
                             "field": "name",
                             "label": "Name",
                             "type": "text",
-                            "help": "Enter a unique name for the data input",
+                            "help": "Enter a unique name for the data input (no spaces).",
                             "required": true,
                             "validators": [
                                 {
@@ -383,7 +387,7 @@
                             "label": "Interval",
                             "type": "text",
                             "required": true,
-                            "help": "Time interval of input in seconds, minimum 300 (5 minutes) or a valid cron schedule.",
+                            "help": "Time interval of input in seconds, minimum 300s (5 minutes) or a valid cron schedule.",
                             "options": {
                                 "placeholder": "1 */4 * * *"
                             },
