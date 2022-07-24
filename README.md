@@ -1,10 +1,16 @@
 # Add-on for OPNsense® Firewall - TA-opnsense
 
 [![GitHub](https://img.shields.io/github/license/ZachChristensen28/TA-opnsense)]()
-[![Documentation Status](https://readthedocs.org/projects/splunk-opnsense-ta-documentation/badge/?version=latest)](https://splunk-opnsense-ta-documentation.readthedocs.io/en/latest/?badge=latest)
+[![Docs](https://github.com/ZachChristensen28/splunk-opnsense-ta-documentation/actions/workflows/ci.yml/badge.svg)](https://splunk-opnsense-ta.ztsplunker.com/)
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/ZachChristensen28/TA-opnsense)
 [![Splunkbase App](https://img.shields.io/badge/Splunkbase-TA--opnsense-blue)](https://splunkbase.splunk.com/app/4538/)
 [![Splunk CIM Version](https://img.shields.io/badge/Splunk%20CIM%20Version-4.x-success)](https://docs.splunk.com/Documentation/CIM/latest/User/Overview)
+
+## Documentation
+
+Full documentation can be found at [https://splunk-opnsense-ta.ztsplunker.com](https://splunk-opnsense-ta.ztsplunker.com).
+
+## About
 
  Info | Description
 ------|----------
@@ -22,10 +28,6 @@ Version 1.5.2
 
 ```
 
-## Documentation
-
-Full documentation can be found at https://splunk-opnsense-ta-documentation.rtfd.io.
-
 ## Bugs
 
-Please open an issue at [github.com](https://github.com/ZachChristensen28/TA-opnsense)
+Please open an issue at [github.com](https://github.com/ZachChristensen28/TA-opnsense/issues)
