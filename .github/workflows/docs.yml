@@ -7,6 +7,7 @@ on:
     paths:
       - "docs/**"
       - "mkdocs.yml"
+      - "includes/**"
 jobs:
   deploy:
     runs-on: ubuntu-latest

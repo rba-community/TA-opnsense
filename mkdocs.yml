@@ -18,7 +18,9 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
   - abbr
-  - pymdownx.snippets
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
   - pymdownx.critic
   - pymdownx.tilde
   - pymdownx.mark
@@ -73,10 +75,12 @@ nav:
   - Getting Started:
       - Logging Architecture: getting-started/logging-architecture.md
       - Where to Install: getting-started/where-to-install.md
+      - Prerequisties: getting-started/prerequisites.md
       - Configure Inputs:
           - Configure Universal Forwarder: getting-started/configure-inputs/configure-inputs.md
           - Configure Modular Input: getting-started/configure-inputs/configure-modinput.md
-      - Configure Enrichment: getting-started/configure-enrichment.md
+      - Enrichment:
+          - Configure Enrichment: getting-started/configure-enrichment.md
       - Troubleshooting:
           - Troubleshoot Monitoring Inputs: getting-started/troubleshooting/troubleshoot-inputs.md
           - Troubleshoot Modular Inputs: getting-started/troubleshooting/troubleshoot-modinputs.md
