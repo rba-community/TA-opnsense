@@ -1,0 +1,93 @@
+site_name: OPNsense Add-on for Splunk Documentation
+edit_uri: ""
+repo_url: https://github.com/ZachChristensen28/TA-opnsense
+repo_name: ZachChristensen28/TA-opnsense
+
+plugins:
+  - git-revision-date-localized:
+      type: date
+      fallback_to_build_date: true
+  - search
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - attr_list
+  - meta
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - abbr
+  - pymdownx.snippets
+  - pymdownx.critic
+  - pymdownx.tilde
+  - pymdownx.mark
+  - pymdownx.caret
+  - md_in_html
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+
+theme:
+  name: material
+  logo: images/opn_ta_logo.png
+  favicon: images/opn_ta_logo.png
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    # - header.autohide
+    - navigation.instant
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    # - toc.integrate
+    - navigation.tracking
+    - content.code.annotate
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: red
+      accent: red
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/zachary-christensen28/
+    - icon: fontawesome/brands/github
+      link: https://github.com/ZachChristensen28
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/ZachTheSplunker
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Logging Architecture: getting-started/logging-architecture.md
+      - Where to Install: getting-started/where-to-install.md
+      - Configure Inputs:
+          - Configure Universal Forwarder: getting-started/configure-inputs/configure-inputs.md
+          - Configure Modular Input: getting-started/configure-inputs/configure-modinput.md
+      - Configure Enrichment: getting-started/configure-enrichment.md
+      - Troubleshooting:
+          - Troubleshoot Monitoring Inputs: getting-started/troubleshooting/troubleshoot-inputs.md
+          - Troubleshoot Modular Inputs: getting-started/troubleshooting/troubleshoot-modinputs.md
+  - Guides:
+      - Syslog Configuration: guides/guide-syslog.md
+      - Intrusion Detection Logging: guides/guide-intrusion-detection.md
+      - Index Utilization: guides/guide-index-utilization.md
+      #- 'Collect Netflows': guides/guide-collect-netflows.md
+  - Reference:
+      - Sourectypes: reference/reference-sourcetypes.md
+      - Modular Input Reference: reference/reference-mod-input.md
+      - Changelog:
+          - Release Notes: reference/releases/index.md
+          - Release History: reference/releases/release-history.md
