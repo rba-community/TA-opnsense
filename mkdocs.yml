@@ -79,6 +79,7 @@ extra:
 
 nav:
   - Home: index.md
+  - OPNsense Add-on: landing-page.md
   - Getting Started:
       - Logging Architecture: getting-started/logging-architecture.md
       - Where to Install: getting-started/where-to-install.md
