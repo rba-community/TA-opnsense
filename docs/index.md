@@ -1,33 +1,42 @@
 ---
+ᴴₒᴴₒᴴₒ: true
 hide:
     - navigation
     - toc
 ---
-# Home
 
-!!! quote ""
-    __*Disclaimer*__
+``` markdown title="Step 1"
+    Install and configure OPNsense Add-on for Splunk
+```
 
-    This Splunk App is community driven and not affiliated with the official [OPNsense® Firewall](https://opnsense.org/). As such, the included documentation does not contain information on how to get started with this firewall. Rather, this documentation serves as a guide to help visualize the data in Splunk. Please visit [https://opnsense.org/](https://opnsense.org/) for documentation on installing/configuring your own OPNsense firewall.
+<div class="result" markdown>
 
-The OPNsense Add-on allows Splunk data administrators to map the OPNsense® Firewall events to the CIM enabling the data to be used with other Splunk Apps, such as the [OPNsense App for Splunk](https://splunkbase.splunk.com/app/5372).
+![OPNsense Add-on for Splunk](/images/splunkbase-ta-opnsense.png){ align=left width=200 }
 
-## Assumptions
+- Complete [logging prerequisites](/getting-started/prerequisites/){ target="_blank" }
+- Install on Indexers, Search Heads
+- Configure inputs
 
-This documentation assumes the following:
+[See Documentation :material-file-document-check:](/landing-page/ "See Documentation"){ .md-button .md-button--primary target="_blank" }
+[View on Splunkbase](https://splunkbase.splunk.com/app/4538/ "View on Splunkbase"){ .md-button .md-button--primary target="_blank" }
 
-1. You have a working OPNsense firewall.
-2. You have a working Splunk environment.
-3. Basic understanding of Splunk and OPNsense.
+</div>
 
-## About
+---
 
-Info | Description
-------|----------
-Version | 1.5.2 - [Splunkbase](https://splunkbase.splunk.com/app/4538/) \| [GitHub](https://github.com/ZachChristensen28/TA-opnsense)
-CIM | 5.x, 4.x
-Vendor Product Version | [OPNsense® 22.x](https://opnsense.org/)
+``` markdown title="Step 2"
+    Install and configure OPNsense App for Splunk
+```
 
-[Get Started](getting-started/logging-architecture){ .md-button .md-button--primary }
+<div class="result" markdown>
 
---8<-- "includes/abbreviations.md"
+![Image title](/images/splunkbase-app-opnsense.png){ align=left width=200 }
+
+- Install [dependencies](https://splunk-opnsense.ztsplunker.com/getting-started/app-dependencies/){ target="_blank" }
+- Install only on Search Heads
+- <small>(recommended)</small> [Configure app](https://splunk-opnsense.ztsplunker.com/getting-started/configure/configure-dma/){ target="_blank" }
+
+[See Documentation :material-file-document-check:](https://splunk-opnsense.ztsplunker.com/landing-page/ "See Documentation"){ .md-button .md-button--primary target="_blank" }
+[View on Splunkbase](https://splunkbase.splunk.com/app/5372/ "View on Splunkbase"){ .md-button .md-button--primary target="_blank" }
+
+</div>
