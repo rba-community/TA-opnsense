@@ -1,7 +1,7 @@
 # Add-on for OPNsense® Firewall - TA-opnsense
 
 [![GitHub](https://img.shields.io/github/license/ZachChristensen28/TA-opnsense)]()
-[![Docs](https://github.com/ZachChristensen28/TA-opnsense/actions/workflows/docs.yml/badge.svg)](https://splunk-opnsense-ta.ztsplunker.com/)
+[![Docs](https://github.com/ZachChristensen28/TA-opnsense/actions/workflows/deploy-docs.yml/badge.svg)](https://splunk-opnsense-ta.ztsplunker.com/)
 ![Appinspect](https://github.com/ZachChristensen28/TA-opnsense/actions/workflows/appinspect.yml/badge.svg)
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/ZachChristensen28/TA-opnsense)
 [![Splunkbase App](https://img.shields.io/badge/Splunkbase-TA--opnsense-blue)](https://splunkbase.splunk.com/app/4538/)
