@@ -7,6 +7,7 @@
 [![Splunkbase App](https://img.shields.io/badge/Splunkbase-TA--opnsense-blue)](https://splunkbase.splunk.com/app/4538/)
 [![Splunk CIM Version](https://img.shields.io/badge/Splunk%20CIM%20Version-5.x%20|%204.x-success)](https://docs.splunk.com/Documentation/CIM/latest/User/Overview)
 ![Splunk Cloud Compatibility](https://img.shields.io/badge/Splunk%20Cloud%20Ready-Victoria%20|%20Classic-informational?logo=splunk)
+[![OPNsense Compatibility](https://img.shields.io/badge/OPNsense%20Compatibility-22.x-orange?logo=opnsense)](https://opnsense.org/)
 
 ## Documentation
 
@@ -23,12 +24,6 @@ Add-on has a web UI | Yes, this add-on has a view to setup a modular input.
 Try the [OPNsense App for Splunk](https://splunkbase.splunk.com/app/5372/).
 
 The TA-opnsense Add-on allows Splunk data administrators to map the OPNsense® firewall events to the [CIM](https://docs.splunk.com/Splexicon:CommonInformationModel) enabling the data to be used with other Splunk Apps, such as Enterprise Security.
-
-```TEXT
-Version 1.5.2
-
-- Updated add-on builder packages.
-```
 
 ## Bugs
 
