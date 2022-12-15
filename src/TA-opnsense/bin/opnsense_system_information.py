@@ -41,18 +41,21 @@ class ModInputopnsense_system_information(modinput_wrapper.base_modinput.BaseMod
         scheme.use_external_validation = True
         scheme.streaming_mode_xml = True
 
-        scheme.add_argument(smi.Argument("name", title="Name",
-                                         description="",
-                                         required_on_create=True))
+        scheme.add_argument(smi.Argument("name", title="Name", description="", required_on_create=True))
 
         """
         For customized inputs, hard code the arguments here to hide argument detail from users.
         For other input types, arguments should be get from input_module. Defining new input types could be easier.
         """
-        scheme.add_argument(smi.Argument("account", title="Account Credentials",
-                                         description="API Credentials",
-                                         required_on_create=True,
-                                         required_on_edit=False))
+        scheme.add_argument(
+            smi.Argument(
+                "account",
+                title="Account Credentials",
+                description="API Credentials",
+                required_on_create=True,
+                required_on_edit=False
+                )
+                )
         return scheme
 
     def get_app_name(self):

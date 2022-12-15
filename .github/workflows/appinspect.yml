@@ -1,0 +1,16 @@
+name: Splunk Appinspect
+on:
+  pull_request:
+    branches:
+      - main
+      - master
+    paths:
+      - "src/**"
+    types: [opened, ready_for_review]
+
+jobs:
+  call-packaging-workflow:
+    uses: ZachChristensen28/splunk-github-wfa/.github/workflows/appinspect.yml@154fb6bd5201e90183c99b40661cb931d61781b4
+    secrets:
+      API_USER: ${{ secrets.API_USER }}
+      API_PASS: ${{ secrets.API_PASS }}

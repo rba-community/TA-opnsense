@@ -52,16 +52,25 @@ def collect_events(helper, ew):
         for item in response['package']:
             if item['installed'] == '1':
                 item['collection_type'] = 'package'
-                event = helper.new_event(source=helper.get_input_type(), index=helper.get_output_index(),
-                                         sourcetype=helper.get_sourcetype(), host=host, data=json.dumps(item))
+                event = helper.new_event(
+                    source=helper.get_input_type(),
+                    index=helper.get_output_index(),
+                    sourcetype=helper.get_sourcetype(),
+                    host=host, data=json.dumps(item)
+                    )
                 ew.write_event(event)
                 package_count += 1
 
         for item in response['plugin']:
             if item['installed'] == '1':
                 item['collection_type'] = 'plugin'
-                event = helper.new_event(source=helper.get_input_type(), index=helper.get_output_index(
-                ), sourcetype=helper.get_sourcetype(), host=host, data=json.dumps(item))
+                event = helper.new_event(
+                    source=helper.get_input_type(),
+                    index=helper.get_output_index(),
+                    sourcetype=helper.get_sourcetype(),
+                    host=host,
+                    data=json.dumps(item)
+                    )
                 ew.write_event(event)
                 plugin_count += 1
 
