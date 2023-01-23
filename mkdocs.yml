@@ -1,7 +1,9 @@
 site_name: OPNsense Add-on for Splunk Documentation
-edit_uri: ""
+edit_uri: edit/master/docs/
 repo_url: https://github.com/ZachChristensen28/TA-opnsense
 repo_name: ZachChristensen28/TA-opnsense
+site_description: >-
+  Welcome to the Home of the OPNsense Add-on for Splunk documentation. The OPNsense Add-on allows Splunk data administrators to map the OPNsense® Firewall events to the CIM enabling the data to be used with other Splunk Apps, such as the OPNsense App for Splunk.
 
 plugins:
   - git-revision-date-localized:
@@ -10,8 +12,6 @@ plugins:
   - search
   - minify:
       minify_html: true
-      minify_js: true
-      minify_css: true
 
 markdown_extensions:
   - toc:
@@ -36,6 +36,23 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+  - def_list
+  - footnotes
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
 
 theme:
   name: material
@@ -52,6 +69,12 @@ theme:
     # - toc.integrate
     - navigation.tracking
     - content.code.annotate
+    - content.code.copy
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.action.edit
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -76,6 +99,8 @@ extra:
       link: https://github.com/ZachChristensen28
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/ZachTheSplunker
+
+copyright: Copyright &copy; 2023 ZachTheSplunker
 
 nav:
   - Home: index.md
