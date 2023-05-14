@@ -1,0 +1,64 @@
+name: Report a bug
+description: Something is not working? Report a bug
+labels:
+  - "bug"
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug description
+      description: >-
+        Please give a detailed description of the issue. Be as specific as
+        possible. If you have found a workaround or a fix for the problem,
+        please let us know. Include screenshots (if applicable).
+    validations:
+      required: true
+
+  - type: textarea
+    id: related-links
+    attributes:
+      label: Related links
+      description: >-
+        Please list all links to the sections of
+        [the documentation](https://splunk-opnsense-ta.ztsplunker.com/landing-page/) that
+        are relevant to the bug in order to show that you have consulted and
+        thoroughly read it. Additionally, list links to possibly related open
+        and closed [issues](https://github.com/ZachChristensen28/TA-opnsense/issues).
+      value: |-
+        - [Example Issue](https://splunk-opnsense-ta.ztsplunker.com/landing-page/)
+        -
+    validations:
+      required: true
+
+  - type: textarea
+    id: ta-version
+    attributes:
+      label: TA-opnsense Version
+      description: >-
+        Which version of OPNsense Add-on for Splunk (TA-opnsense) are you using?
+      placeholder: |-
+        1.5.2
+    validations:
+      required: true
+
+  - type: textarea
+    id: splunk-version
+    attributes:
+      label: Splunk Version
+      description: >-
+        Which version of Splunk are you using?
+      placeholder: |-
+        9.0.1
+    validations:
+      required: true
+
+  - type: textarea
+    id: opn-version
+    attributes:
+      label: OPNsense Version
+      description: >-
+        Which version of OPNsense are you using?
+      placeholder: |-
+        23.1
+    validations:
+      required: true
