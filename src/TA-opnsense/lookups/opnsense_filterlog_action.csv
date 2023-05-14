@@ -2,4 +2,5 @@ vendor_action,action
 pass,allowed
 block,blocked
 rdr,redirected
+nat,allowed
 unknown,unknown
