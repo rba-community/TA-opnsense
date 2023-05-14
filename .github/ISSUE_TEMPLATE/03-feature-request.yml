@@ -1,5 +1,7 @@
 name: Feature Request
 description: Want to submit an idea? Propose a change or feature request
+labels:
+  - "feature request"
 body:
   - type: textarea
     id: description
