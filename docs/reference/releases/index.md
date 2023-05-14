@@ -1,16 +1,11 @@
 # Release notes for the OPNsense Add-on for Splunk
 
-## v1.5.2 <small>Dec 15, 2022</small>
-
-???+ warning
-    **_Only applies if you are upgrading from a version < 1.5.0_**
-
-    This version includes packages for the new version of Add-on builder (v4.0.0) which may cause API credentials to no longer work after updating. After updating to this version, you may have to re-enter the API credentials for the modular inputs to work again by editing the existing account configurations.
+## v1.5.3 <small>May 14, 2023</small>
 
 ### What's changed
 
-- Updated Add-on builder packages.
-- Updated documentation to address required log formats [#67](https://github.com/ZachChristensen28/TA-opnsense/issues/67).
+- Fixed "unknown" action for nat rules [#85](https://github.com/ZachChristensen28/TA-opnsense/issues/85).
+- Added the field `dest_interface` for CIM compliance.
 
 ### Known issues
 

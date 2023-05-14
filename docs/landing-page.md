@@ -1,5 +1,4 @@
 ---
-ᴴₒᴴₒᴴₒ: true
 hide:
     - navigation
     - toc
@@ -25,10 +24,10 @@ This documentation assumes the following:
 
 Info | Description
 ------|----------
-Version | 1.5.2 - [Splunkbase](https://splunkbase.splunk.com/app/4538/) \| [GitHub](https://github.com/ZachChristensen28/TA-opnsense)
+Version | 1.5.3 - [Splunkbase](https://splunkbase.splunk.com/app/4538/) \| [GitHub](https://github.com/ZachChristensen28/TA-opnsense)
 CIM | 5.x, 4.x
-Vendor Product Version | [OPNsense® 22.x](https://opnsense.org/)
+Vendor Product Version | [OPNsense® 22, 23](https://opnsense.org/)
 
-[Get Started](getting-started/logging-architecture){ .md-button .md-button--primary }
+[Get Started](/getting-started/logging-architecture){ .md-button .md-button--primary }
 
 --8<-- "includes/abbreviations.md"
