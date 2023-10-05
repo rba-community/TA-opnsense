@@ -1,11 +1,11 @@
 # Release notes for the OPNsense Add-on for Splunk
 
-## v1.5.3 <small>May 14, 2023</small>
+## v1.5.4 <small>October 5, 2023</small>
 
 ### What's changed
 
-- Fixed "unknown" action for nat rules [#85](https://github.com/ZachChristensen28/TA-opnsense/issues/85).
-- Added the field `dest_interface` for CIM compliance.
+- Updated Splunk Add-on version to 4.1.3.
+- Updated Splunk Python SDK to version 1.7.4
 
 ### Known issues
 
