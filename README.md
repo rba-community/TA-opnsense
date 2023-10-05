@@ -17,7 +17,7 @@ Full documentation can be found at [https://splunk-opnsense-ta.ztsplunker.com](h
 
  Info | Description
 ------|----------
-Version | 1.5.3 - See on [Splunkbase](https://splunkbase.splunk.com/app/4538/)
+Version | 1.5.4 - See on [Splunkbase](https://splunkbase.splunk.com/app/4538/)
 Vendor Product Version | [OPNsense® 22.x, 23.x](https://opnsense.org/)
 Add-on has a web UI | Yes, this add-on has a view to setup a modular input.
 

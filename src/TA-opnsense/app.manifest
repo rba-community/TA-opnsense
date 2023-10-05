@@ -5,7 +5,7 @@
     "id": {
       "group": null,
       "name": "TA-opnsense",
-      "version": "1.5.3"
+      "version": "1.5.4"
     },
     "author": [
       {
@@ -35,9 +35,9 @@
       "uri": null
     },
     "privacyPolicy": {
-      "name": null,
+      "name": "Splunk Privacy Policy",
       "text": null,
-      "uri": null
+      "uri": "https://www.splunk.com/en_us/legal/privacy/privacy-policy.html"
     },
     "releaseNotes": {
       "name": "README",
