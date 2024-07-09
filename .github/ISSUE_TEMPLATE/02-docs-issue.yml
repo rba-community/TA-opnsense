@@ -8,7 +8,7 @@ body:
     attributes:
       label: Description
       description: >-
-        Please describe the issue found in the [documentation](https://splunk-opnsense-ta.ztsplunker.com/landing-page/) or an improvement that can be made.
+        Please describe the issue found in the [documentation](https://ta-opnsense.rba.community/landing-page/) or an improvement that can be made.
     validations:
       required: true
 
@@ -17,7 +17,7 @@ body:
     attributes:
       label: Related links
       description: >-
-        Please list all links to the sections of [our documentation](https://splunk-opnsense-ta.ztsplunker.com/landing-page/) that are impacted by the issue you described above.
+        Please list all links to the sections of [our documentation](https://ta-opnsense.rba.community/landing-page/) that are impacted by the issue you described above.
     validations:
       required: true
 

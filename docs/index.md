@@ -31,11 +31,11 @@ hide:
 
 ![Image title](/images/splunkbase-app-opnsense.png){ align=left width=200 }
 
-- Install [dependencies](https://splunk-opnsense.ztsplunker.com/getting-started/app-dependencies/){ target="_blank" }
+- Install [dependencies](https://opnsense.rba.community/getting-started/app-dependencies/){ target="_blank" }
 - Install only on Search Heads
-- <small>(recommended)</small> [Configure app](https://splunk-opnsense.ztsplunker.com/getting-started/configure/configure-dma/){ target="_blank" }
+- <small>(recommended)</small> [Configure app](https://opnsense.rba.community/getting-started/configure/configure-dma/){ target="_blank" }
 
-[See Documentation :material-file-document-check:](https://splunk-opnsense.ztsplunker.com/landing-page/ "See Documentation"){ .md-button .md-button--primary target="_blank" }
+[See Documentation :material-file-document-check:](https://opnsense.rba.community/landing-page/ "See Documentation"){ .md-button .md-button--primary target="_blank" }
 [View on Splunkbase](https://splunkbase.splunk.com/app/5372/ "View on Splunkbase"){ .md-button .md-button--primary target="_blank" }
 
 </div>

@@ -1,7 +1,7 @@
 site_name: OPNsense Add-on for Splunk Documentation
 edit_uri: edit/master/docs/
-repo_url: https://github.com/ZachChristensen28/TA-opnsense
-repo_name: ZachChristensen28/TA-opnsense
+repo_url: https://github.com/rba-community/TA-opnsense
+repo_name: rba-community/TA-opnsense
 site_description: >-
   Welcome to the Home of the OPNsense Add-on for Splunk documentation. The OPNsense Add-on allows Splunk data administrators to map the OPNsense® Firewall events to the CIM enabling the data to be used with other Splunk Apps, such as the OPNsense App for Splunk.
 
@@ -94,13 +94,11 @@ theme:
 extra:
   social:
     - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/in/zachary-christensen28/
+      link: https://www.linkedin.com/groups/12702283/
     - icon: fontawesome/brands/github
-      link: https://github.com/ZachChristensen28
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/ZachTheSplunker
+      link: https://github.com/rba-community/TA-opnsense
 
-copyright: Copyright &copy; 2023 ZachTheSplunker
+copyright: Copyright &copy; 2024 The RBA Community
 
 nav:
   - Home: index.md

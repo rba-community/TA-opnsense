@@ -5,11 +5,11 @@
     "id": {
       "group": null,
       "name": "TA-opnsense",
-      "version": "1.5.5"
+      "version": "1.5.6"
     },
     "author": [
       {
-        "name": "Zach Christensen",
+        "name": "The RBA Community",
         "email": null,
         "company": null
       }
@@ -30,9 +30,9 @@
       "Intrusion Detection": ">=4.18.0"
     },
     "license": {
-      "name": "SPLUNK GENERAL TERMS",
+      "name": "Apache 2.0",
       "text": null,
-      "uri": "https://www.splunk.com/en_us/legal/splunk-general-terms.html"
+      "uri": "https://github.com/rba-community/TA-opnsense/blob/master/LICENSE"
     },
     "privacyPolicy": {
       "name": "Splunk Privacy Policy",
@@ -41,7 +41,7 @@
     },
     "releaseNotes": {
       "name": "README",
-      "uri": "https://splunk-opnsense-ta.ztsplunker.com/"
+      "uri": "https://ta-opnsense.rba.community/"
     }
   },
   "dependencies": null,
