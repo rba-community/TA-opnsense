@@ -20,12 +20,12 @@ body:
       label: Related links
       description: >-
         Please list all links to the sections of
-        [the documentation](https://splunk-opnsense-ta.ztsplunker.com/landing-page/) that
+        [the documentation](https://ta-opnsense.rba.community/landing-page/) that
         are relevant to the bug in order to show that you have consulted and
         thoroughly read it. Additionally, list links to possibly related open
-        and closed [issues](https://github.com/ZachChristensen28/TA-opnsense/issues).
+        and closed [issues](https://github.com/rba-community/TA-opnsense/issues).
       value: |-
-        - [Example Issue](https://splunk-opnsense-ta.ztsplunker.com/landing-page/)
+        - [Example Issue](https://ta-opnsense.rba.community/landing-page/)
         -
     validations:
       required: true
