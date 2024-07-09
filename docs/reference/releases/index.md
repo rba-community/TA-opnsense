@@ -1,11 +1,11 @@
 # Release notes for the OPNsense Add-on for Splunk
 
-## v1.5.4 <small>October 5, 2023</small>
+## v1.5.5 <small>May 29, 2024</small>
 
 ### What's changed
 
-- Updated Splunk Add-on version to 4.1.3.
-- Updated Splunk Python SDK to version 1.7.4
+- Fixed logging for openvpn logs - [#127](https://github.com/ZachChristensen28/TA-opnsense/issues/127) by [ChrisSiedler](https://github.com/ChrisSiedler)
+- Updated License to SGT
 
 ### Known issues
 
