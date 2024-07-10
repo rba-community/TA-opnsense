@@ -25,6 +25,10 @@ Try the [OPNsense App for Splunk](https://splunkbase.splunk.com/app/5372/).
 
 The TA-opnsense Add-on allows Splunk data administrators to map the OPNsense® firewall events to the [CIM](https://docs.splunk.com/Splexicon:CommonInformationModel) enabling the data to be used with other Splunk Apps, such as Enterprise Security.
 
+## Disclaimer
+
+> This Splunk App is community driven and not affiliated with the official [OPNsense® Firewall](https://opnsense.org/). Please visit [https://opnsense.org/](https://opnsense.org/) for documentation on installing/configuring your own OPNsense firewall.
+
 ## Bugs
 
 Please open an issue at [github.com](https://github.com/rba-community/TA-opnsense/issues)
