@@ -1,8 +1,14 @@
 # Release history for the OPNsense addon for Splunk
 
-The latest version of the OPNsense addon for Splunk is version 1.5.6. See [Release notes for the OPNsense addon for Splunk](../../releases/) of the latest version.
+The latest version of the OPNsense addon for Splunk is version 1.5.7. See [Release notes for the OPNsense addon for Splunk](../../releases/) of the latest version.
 
-## v1.5.6 <small>May 29, 2024</small>
+## v1.5.6 <small>July 10, 2024</small>
+
+### What's changed
+
+- Initial Release under The RBA Community
+
+## v1.5.5 <small>May 29, 2024</small>
 
 ### What's changed
 
