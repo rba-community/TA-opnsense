@@ -1,10 +1,10 @@
 # Release notes for the OPNsense Add-on for Splunk
 
-## v1.5.6 <small>July 10, 2024</small>
+## v1.5.7 <small>Aug 21, 2024</small>
 
 ### What's changed
 
-- Initial Release under The RBA Community
+- [Splunk Add-on Builder library updates](https://docs.splunk.com/Documentation/AddonBuilder/4.2.0/UserGuide/Whatsnew){ target="blank" }
 
 ### Known issues
 
